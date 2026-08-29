@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --filter storefront build)",
+      "Bash(grep -o \"\\\\.dark[^,{]*{[^}]\\\\{0,0\\\\}\" entry.D8CTtgN0.css)",
+      "Bash(grep -c \"\\\\.dark\\\\\\\\\\\\\\\\:\" entry.D8CTtgN0.css)",
+      "Bash(pnpm --filter admin build)"
+    ]
+  }
+}

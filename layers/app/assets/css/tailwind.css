@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Shared page/section width + horizontal gutter */
+  .container-page {
+    @apply max-w-[1400px] mx-auto px-6;
+  }
+
+  /* Card surface color tokens (light/dark) */
+  .surface-card {
+    @apply bg-white dark:bg-[#1A1D25] border-neutral-200 dark:border-[#2A2E38];
+  }
+
+  /* Hover lift interaction shared by product/testimonial cards */
+  .hover-lift-card {
+    @apply rounded-xl border overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-sm hover:border-[#3373FF]/70 cursor-pointer;
+  }
+
+  /* Image zoom-on-hover, paired with a `group` ancestor */
+  .img-zoom {
+    @apply w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105;
+  }
+
+  /* Secondary/muted body text */
+  .muted-text {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  /* Shared border color for dividers/separators */
+  .divider-border {
+    @apply border-neutral-200 dark:border-[#2A2E38];
+  }
+
+  /* Product/cart thumbnail frame */
+  .thumb-frame {
+    @apply rounded-xl overflow-hidden bg-neutral-100 dark:bg-[#12141A] border border-neutral-200 dark:border-[#2A2E38] shrink-0;
+  }
+
+  /* Quantity stepper +/- buttons */
+  .stepper-btn {
+    @apply text-neutral-500 dark:text-neutral-400 hover:text-[#11141B] dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-[#2A2E38] transition-colors;
+  }
+
+  /* Plain text links that highlight brand-blue on hover */
+  .link-hover-brand {
+    @apply hover:text-[#3373FF] transition-colors;
+  }
+
+  /* Card titles that highlight brand-blue when the ancestor `group` is hovered */
+  .title-hover-brand {
+    @apply group-hover:text-[#3373FF] transition-colors;
+  }
+
+  /* Subtle press/lift micro-interaction for primary CTAs */
+  .btn-lift {
+    @apply hover:-translate-y-0.5 active:translate-y-0;
+  }
+}

@@ -1,0 +1,12 @@
+packages:
+  - "apps/*"
+  - "layers"
+onlyBuiltDependencies:
+  - esbuild
+  - core-js
+overrides:
+  # cookie@1.1.x's dist build has duplicate `exports.X = ...` assignments that
+  # trip up esbuild's CJS-export scanner, dropping the `parse`/`serialize`
+  # aliases @supabase/ssr needs when Vite pre-bundles it for dev. 1.0.2 is the
+  # last version with a clean, unaliased export shape.
+  cookie: 1.0.2

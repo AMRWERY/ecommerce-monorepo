@@ -1,0 +1,24 @@
+{
+  "home": {
+    "home_page": "الصفحه الرئيسيه"
+  },
+  "promo": {
+    "banner": "شحن مجاني لجميع الطلبات التي تتجاوز 100 دولار"
+  },
+  "navbar": {
+    "brand": "المتجر",
+    "shop": "المتجر",
+    "categories": "الفئات",
+    "userAccount": "الحساب",
+    "simulateLoading": "محاكاة التحميل",
+    "contentPlaceholder": "المحتوى هنا",
+    "cartTitle": "سلة التسوق",
+    "subtotal": "الإجمالي الفرعي",
+    "checkout": "إتمام الشراء",
+    "toggleThemeLabel": "تبديل المظهر",
+    "toggleLocaleLabel": "تبديل اللغة"
+  },
+  "shop": {
+    "addToCart": "أضف"
+  }
+}

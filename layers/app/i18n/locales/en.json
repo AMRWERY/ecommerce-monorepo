@@ -1,0 +1,24 @@
+{
+  "home": {
+    "home_page": "Home Page"
+  },
+  "promo": {
+    "banner": "FREE SHIPPING ON ALL ORDERS OVER $100"
+  },
+  "navbar": {
+    "brand": "Storefront",
+    "shop": "Shop",
+    "categories": "Categories",
+    "userAccount": "Account",
+    "simulateLoading": "Simulate loading",
+    "contentPlaceholder": "Content goes here",
+    "cartTitle": "Your Cart",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "toggleThemeLabel": "Toggle theme",
+    "toggleLocaleLabel": "Switch language"
+  },
+  "shop": {
+    "addToCart": "Add"
+  }
+}
