@@ -42,16 +42,16 @@
             <div class="space-y-2 text-sm">
               <LazyVInput type="checkbox" v-model="categories.allFurniture">
                 All Furniture
-              </VInput>
+              </LazyVInput>
               <LazyVInput type="checkbox" v-model="categories.seating">
                 Seating
-              </VInput>
+              </LazyVInput>
               <LazyVInput type="checkbox" v-model="categories.tables">
                 Tables
-              </VInput>
+              </LazyVInput>
               <LazyVInput type="checkbox" v-model="categories.lighting">
                 Lighting
-              </VInput>
+              </LazyVInput>
             </div>
           </div>
         </div>

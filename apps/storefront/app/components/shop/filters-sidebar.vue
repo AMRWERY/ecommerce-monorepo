@@ -7,10 +7,10 @@
       <div class="space-y-3 text-sm">
         <LazyVInput type="checkbox" v-model="categories.allFurniture">
           All Furniture
-        </VInput>
-        <LazyVInput type="checkbox" v-model="categories.seating">Seating</VInput>
-        <LazyVInput type="checkbox" v-model="categories.tables">Tables</VInput>
-        <LazyVInput type="checkbox" v-model="categories.lighting">Lighting</VInput>
+        </LazyVInput>
+        <LazyVInput type="checkbox" v-model="categories.seating">Seating</LazyVInput>
+        <LazyVInput type="checkbox" v-model="categories.tables">Tables</LazyVInput>
+        <LazyVInput type="checkbox" v-model="categories.lighting">Lighting</LazyVInput>
       </div>
     </div>
 
@@ -36,13 +36,13 @@
       <div class="space-y-3 text-sm">
         <LazyVInput type="radio" name="availability" value="all" v-model="availability">
           All
-        </VInput>
+        </LazyVInput>
         <LazyVInput type="radio" name="availability" value="in_stock" v-model="availability">
           In Stock
-        </VInput>
+        </LazyVInput>
         <LazyVInput type="radio" name="availability" value="pre_order" v-model="availability">
           Pre Order
-        </VInput>
+        </LazyVInput>
       </div>
     </div>
   </aside>
