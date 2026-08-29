@@ -99,7 +99,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "e-commerce",
+      title: "Bazario",
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
