@@ -57,19 +57,7 @@
             class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm border border-neutral-200/60 shadow-sm text-neutral-700 hover:text-[#3373FF] hover:scale-105"
             aria-label="Zoom Image"
           >
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-              />
-            </svg>
+            <Icon name="heroicons:magnifying-glass" class="w-4 h-4" />
           </LazyVButton>
         </div>
       </div>
@@ -88,23 +76,11 @@
             class="p-2 rounded-full border border-neutral-200 hover:border-neutral-300 shrink-0"
             aria-label="Save to Wishlist"
           >
-            <svg
+            <Icon
+              :name="isWishlisted ? 'heroicons:heart-solid' : 'heroicons:heart'"
               class="w-5 h-5 transition-colors"
-              :class="
-                isWishlisted
-                  ? 'fill-red-500 text-red-500'
-                  : 'fill-none text-neutral-600'
-              "
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.8"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-              />
-            </svg>
+              :class="isWishlisted ? 'text-red-500' : 'text-neutral-600'"
+            />
           </LazyVButton>
         </div>
 
@@ -237,19 +213,7 @@
           <LazyVButton
             class="flex-1 h-11 btn-lift"
           >
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
+            <Icon name="heroicons:shopping-cart" class="w-4 h-4" />
             Add to Cart
           </LazyVButton>
         </div>
@@ -270,24 +234,15 @@
               class="w-full flex items-center justify-between py-2 text-sm font-semibold text-start"
             >
               <span>Details & Specifications</span>
-              <svg
+              <Icon
+                name="heroicons:chevron-down"
                 class="w-4 h-4 transition-transform duration-200"
                 :class="
                   openAccordion === 'specs'
                     ? 'rotate-180 text-[#3373FF]'
                     : 'text-neutral-400'
                 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+              />
             </LazyVButton>
             <div
               v-show="openAccordion === 'specs'"
@@ -314,24 +269,15 @@
               class="w-full flex items-center justify-between py-2 text-sm font-semibold text-start"
             >
               <span>Shipping & Delivery</span>
-              <svg
+              <Icon
+                name="heroicons:chevron-down"
                 class="w-4 h-4 transition-transform duration-200"
                 :class="
                   openAccordion === 'shipping'
                     ? 'rotate-180 text-[#3373FF]'
                     : 'text-neutral-400'
                 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+              />
             </LazyVButton>
             <div
               v-show="openAccordion === 'shipping'"
@@ -352,24 +298,15 @@
               class="w-full flex items-center justify-between py-2 text-sm font-semibold text-start"
             >
               <span>Return Policy</span>
-              <svg
+              <Icon
+                name="heroicons:chevron-down"
                 class="w-4 h-4 transition-transform duration-200"
                 :class="
                   openAccordion === 'returns'
                     ? 'rotate-180 text-[#3373FF]'
                     : 'text-neutral-400'
                 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+              />
             </LazyVButton>
             <div
               v-show="openAccordion === 'returns'"

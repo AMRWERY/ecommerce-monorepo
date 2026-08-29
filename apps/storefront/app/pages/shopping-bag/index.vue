@@ -18,19 +18,10 @@
       v-if="items.length === 0"
       class="flex flex-col items-center justify-center text-center py-24 muted-text"
     >
-      <svg
+      <Icon
+        name="heroicons:shopping-bag"
         class="w-16 h-16 text-neutral-300 dark:text-neutral-600 mb-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-        />
-      </svg>
+      />
       <p class="text-base font-medium mb-5">Your shopping bag is empty</p>
       <VButton to="/shop" size="lg">Start Shopping</VButton>
     </div>
@@ -120,19 +111,7 @@
               @click="removeItem(item.id)"
               aria-label="Remove item"
             >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 7h12M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2m2 0v13a2 2 0 01-2 2H8a2 2 0 01-2-2V7h12z"
-                />
-              </svg>
+              <Icon name="heroicons:trash" class="w-4 h-4" />
             </VButton>
           </div>
         </div>
@@ -178,19 +157,10 @@
 
           <VButton to="/checkout" block size="lg" class="group">
             <span>Proceed to Checkout</span>
-            <svg
+            <Icon
+              name="heroicons:arrow-right"
               class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            />
           </VButton>
           <VButton to="/shop" variant="outline" color="neutral" block>
             Continue Shopping

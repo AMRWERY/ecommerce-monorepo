@@ -33,19 +33,7 @@
           @click="cartStore.close()"
           aria-label="Close Bag"
         >
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <Icon name="heroicons:x-mark" class="w-5 h-5" />
         </VButton>
       </div>
 
@@ -57,19 +45,10 @@
           v-if="items.length === 0"
           class="h-full flex flex-col items-center justify-center text-center py-12 muted-text"
         >
-          <svg
+          <Icon
+            name="heroicons:shopping-bag"
             class="w-12 h-12 text-neutral-300 dark:text-neutral-600 mb-3"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-            />
-          </svg>
+          />
           <p class="text-sm font-medium">Your shopping bag is empty</p>
           <VButton
             to="/shop"
@@ -79,19 +58,10 @@
             @click="cartStore.close()"
           >
             Start Shopping
-            <svg
+            <Icon
+              name="heroicons:arrow-right"
               class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            />
           </VButton>
         </div>
 
@@ -203,19 +173,10 @@
           @click="cartStore.close()"
         >
           <span>Checkout</span>
-          <svg
+          <Icon
+            name="heroicons:arrow-right"
             class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
+          />
         </VButton>
       </div>
     </div>

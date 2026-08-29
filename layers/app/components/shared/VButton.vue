@@ -1,25 +1,6 @@
 <template>
   <nuxt-link-locale v-if="to !== undefined" :to="to" :class="classes">
-    <svg
-      v-if="loading"
-      class="h-4 w-4 animate-spin"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <circle
-        class="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        stroke-width="4"
-      />
-      <path
-        class="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-      />
-    </svg>
+    <Icon v-if="loading" name="svg-spinners:180-ring" class="h-4 w-4" />
     <slot />
   </nuxt-link-locale>
   <component
@@ -30,26 +11,7 @@
     :aria-disabled="disabled || loading || undefined"
     :class="classes"
   >
-    <svg
-      v-if="loading"
-      class="h-4 w-4 animate-spin"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <circle
-        class="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        stroke-width="4"
-      />
-      <path
-        class="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-      />
-    </svg>
+    <Icon v-if="loading" name="svg-spinners:180-ring" class="h-4 w-4" />
     <slot />
   </component>
 </template>

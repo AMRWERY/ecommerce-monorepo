@@ -29,14 +29,7 @@
       <div class="relative">
         <LazyVButton variant="soft" color="neutral" size="sm" class="shadow-sm">
           <span>Sort By</span>
-          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+          <Icon name="heroicons:chevron-down" class="w-3.5 h-3.5 opacity-60" />
         </LazyVButton>
       </div>
     </div>
