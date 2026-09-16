@@ -1,18 +1,13 @@
 <template>
-  <div
-    :class="[
-      isRtl ? 'font-cairo' : 'font-inter',
-      'bg-[#F6F7F9] text-[#11141B] dark:bg-[#12141A] dark:text-[#F0F1F4] min-h-screen transition-colors duration-200 antialiased flex flex-col selection:bg-[#3373FF] selection:text-white',
-    ]"
-    :dir="isRtl ? 'rtl' : 'ltr'"
-  >
-    <div class="w-full relative flex flex-1 flex-col">
-      <lazy-top-promo-banner />
+  <div :dir="isRtl ? 'rtl' : 'ltr'">
+    <div class="w-full relative flex flex-1 flex-col min-h-screen bg-white dark:bg-[#0E1015] text-neutral-900 dark:text-neutral-100 transition-colors">
+      <lazy-top-banner />
 
       <navbar />
       <!-- Content layer -->
       <main
-        class="flex-1 max-w-[1400px] w-full mx-auto p-6 md:p-8 flex flex-col animate-fade-slide-up"
+        class="flex-1 w-full flex flex-col animate-fade-slide-up"
+        :class="isHomePage ? '' : 'max-w-[1400px] mx-auto p-6 md:p-8'"
       >
         <slot />
       </main>
@@ -24,5 +19,12 @@
 
 <script lang="ts" setup>
 const { locale } = useI18n();
+const route = useRoute();
 const isRtl = computed(() => locale.value === "ar");
+
+const isHomePage = computed(() => {
+  const name = route.name ? String(route.name) : "";
+  const path = route.path.replace(/\/$/, "");
+  return name.startsWith("index") || path === "" || path === `/${locale.value}`;
+});
 </script>

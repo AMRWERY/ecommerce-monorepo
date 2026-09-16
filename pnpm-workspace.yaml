@@ -1,6 +1,9 @@
 packages:
   - "apps/*"
   - "layers"
+allowBuilds:
+  core-js: true
+  esbuild: true
 onlyBuiltDependencies:
   - esbuild
   - core-js

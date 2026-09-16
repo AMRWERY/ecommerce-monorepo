@@ -1,5 +1,5 @@
 {
-  "name": "@bazario/layer-tailwind",
+  "name": "@shop.co/layer-tailwind",
   "type": "module",
   "private": true,
   "main": "./app/nuxt.config.ts",

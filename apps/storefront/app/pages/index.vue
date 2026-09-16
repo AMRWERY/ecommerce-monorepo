@@ -1,10 +1,14 @@
 <template>
   <div>
-    <lazy-main-hero-banner />
-
-   <lazy-featured-essentials />
+    <lazy-hero-section />
     
-   <lazy-customer-experiences />
+    <lazy-new-arrivals />
+
+    <lazy-top-selling />
+
+    <lazy-dress-style-section />
+
+    <lazy-customer-reviews-carousel />
   </div>
 </template>
 
