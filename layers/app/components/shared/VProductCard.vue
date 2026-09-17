@@ -92,10 +92,22 @@ const props = defineProps<{
 }>()
 
 const wishlistStore = useWishlistStore()
+const toast = useToast()
 const isSaved = computed(() => wishlistStore.hasItem(props.product.id))
 
 const toggleWishlist = () => {
-    wishlistStore.toggleItem(props.product)
+    const added = wishlistStore.toggleItem(props.product)
+    if (added) {
+        toast.success(`Added "${props.product.title}" to wishlist`, {
+            title: 'Saved Item',
+            duration: 3000,
+        })
+    } else {
+        toast.info(`Removed "${props.product.title}" from wishlist`, {
+            title: 'Wishlist Updated',
+            duration: 3000,
+        })
+    }
 }
 
 // Calculate discount percentage if not provided directly

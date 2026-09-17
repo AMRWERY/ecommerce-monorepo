@@ -111,9 +111,11 @@
           <label for="terms"
             class="text-xs text-gray-600 dark:text-neutral-400 select-none cursor-pointer leading-tight">
             I agree to the
-            <a href="#" class="font-semibold text-black dark:text-white hover:underline">Terms of Service</a>
+            <nuxt-link-locale to="/terms-of-service"
+              class="font-semibold text-black dark:text-white hover:underline">Terms of Service</nuxt-link-locale>
             and
-            <a href="#" class="font-semibold text-black dark:text-white hover:underline">Privacy Policy</a>
+            <nuxt-link-locale to="/privacy-policy"
+              class="font-semibold text-black dark:text-white hover:underline">Privacy Policy</nuxt-link-locale>
           </label>
         </div>
 
@@ -188,17 +190,21 @@ const passwordStrength = computed(() => {
   }
 })
 
+const toast = useToast()
+
 const handleSignup = async () => {
   errorMessage.value = ''
   successMessage.value = ''
 
   if (!form.agreeTerms) {
     errorMessage.value = 'Please agree to the Terms of Service and Privacy Policy.'
+    toast.warning('Please agree to the Terms of Service and Privacy Policy.', { title: 'Terms Required' })
     return
   }
 
   if (form.password.length < 8) {
     errorMessage.value = 'Password must be at least 8 characters long.'
+    toast.error('Password must be at least 8 characters long.', { title: 'Password Too Short' })
     return
   }
 
@@ -207,6 +213,7 @@ const handleSignup = async () => {
   setTimeout(() => {
     isLoading.value = false
     successMessage.value = 'Account created successfully! Redirecting to your profile...'
+    toast.success('Account created successfully! Welcome to SHOP.CO.', { title: 'Account Created' })
     setTimeout(() => {
       router.push('/profile')
     }, 1200)
@@ -214,11 +221,13 @@ const handleSignup = async () => {
 }
 
 const handleSocialLogin = (provider: string) => {
-  alert(`Connecting to ${provider} authentication...`)
+  toast.info(`Connecting to ${provider} authentication...`, {
+    title: `${provider} Sign Up`,
+  })
 }
 
 definePageMeta({
-  alias: ['/auth/sign-up'],
+  alias: ['/signup', '/auth/sign-up'],
 })
 
 useHead({

@@ -196,9 +196,14 @@ const validateEmail = () => {
   }
 }
 
+const toast = useToast()
+
 const handleSubmit = async () => {
   validateEmail()
-  if (emailError.value) return
+  if (emailError.value) {
+    toast.error(emailError.value, { title: 'Invalid Email' })
+    return
+  }
 
   isLoading.value = true
   await new Promise((r) => setTimeout(r, 1200))
@@ -206,6 +211,7 @@ const handleSubmit = async () => {
 
   sentEmail.value = email.value
   submitted.value = true
+  toast.success(`Password reset instructions sent to ${email.value}`, { title: 'Email Sent' })
   startResendCooldown()
 }
 
@@ -228,6 +234,7 @@ const handleResend = async () => {
   await new Promise((r) => setTimeout(r, 900))
   isResending.value = false
   resendSuccess.value = true
+  toast.success('A new reset link has been dispatched to your email.', { title: 'Link Resent' })
   startResendCooldown()
 }
 
@@ -236,7 +243,7 @@ onUnmounted(() => {
 })
 
 definePageMeta({
-  alias: ['/auth/reset-password'],
+  alias: ['/reset-password', '/auth/reset-password'],
 })
 
 useHead({

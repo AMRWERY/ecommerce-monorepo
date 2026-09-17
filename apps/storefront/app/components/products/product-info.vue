@@ -125,8 +125,10 @@ const wishlistStore = useWishlistStore()
 const currentId = computed(() => props.productId || (props.product as any).id || route.params.slug || 1)
 const isSaved = computed(() => wishlistStore.hasItem(currentId.value))
 
+const toast = useToast()
+
 const toggleWishlist = (): void => {
-  wishlistStore.toggleItem({
+  const added = wishlistStore.toggleItem({
     id: currentId.value,
     title: props.product.title,
     price: props.product.price,
@@ -136,6 +138,18 @@ const toggleWishlist = (): void => {
     image: props.product.images?.[0] || '/img/prod-01.png',
     route: `/products/${currentId.value}`,
   })
+
+  if (added) {
+    toast.success(`Added "${props.product.title}" to wishlist`, {
+      title: 'Saved Item',
+      duration: 3000,
+    })
+  } else {
+    toast.info(`Removed "${props.product.title}" from wishlist`, {
+      title: 'Wishlist Updated',
+      duration: 3000,
+    })
+  }
 }
 
 const quantity = ref(1)

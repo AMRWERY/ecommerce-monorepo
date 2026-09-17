@@ -158,17 +158,17 @@ const footerLinks: FooterColumn[] = [
         items: [
             { label: 'Customer Support', route: '#' },
             { label: 'Delivery Details', route: '#' },
-            { label: 'Terms & Conditions', route: '#' },
-            { label: 'Privacy Policy', route: '#' },
+            { label: 'Terms & Conditions', route: '/terms-of-service' },
+            { label: 'Privacy Policy', route: '/privacy-policy' },
         ],
     },
     {
         title: 'FAQ',
         items: [
-            { label: 'Account', route: '#' },
-            { label: 'Manage Deliveries', route: '#' },
-            { label: 'Orders', route: '#' },
-            { label: 'Payments', route: '#' },
+            { label: 'Account', route: '/profile' },
+            { label: 'Manage Deliveries', route: '/profile' },
+            { label: 'Orders', route: '/profile' },
+            { label: 'Payments', route: '/profile' },
         ],
     },
     {
@@ -182,9 +182,13 @@ const footerLinks: FooterColumn[] = [
     },
 ]
 
+const toast = useToast()
+
 const handleSubscribe = (): void => {
     if (!email.value) return
-    alert(`Thank you for subscribing with: ${email.value}`)
+    toast.success(`Thank you for subscribing with: ${email.value}`, {
+        title: 'Subscribed to Newsletter',
+    })
     email.value = ''
 }
 </script>

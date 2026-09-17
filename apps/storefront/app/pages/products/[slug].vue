@@ -161,6 +161,8 @@ const relatedProducts = ref<Product[]>([
   },
 ])
 
+const toast = useToast()
+
 const handleAddToCart = (payload: { product: ProductDetail; size: string; color: string; quantity: number }): void => {
   cartStore.addItem({
     id: Number(productId.value) || 1,
@@ -170,6 +172,11 @@ const handleAddToCart = (payload: { product: ProductDetail; size: string; color:
     size: payload.size,
     color: payload.color,
     quantity: payload.quantity,
+  })
+
+  toast.success(`Added ${payload.quantity}x "${payload.product.title}" (${payload.size}) to your bag!`, {
+    title: 'Added to Cart',
+    duration: 3500,
   })
 }
 
