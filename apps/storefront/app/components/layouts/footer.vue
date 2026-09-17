@@ -25,7 +25,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <LazyVButton type="submit" color="light" shape="pill" block>
+                        <LazyVButton type="submit" color="light" shape="pill" block :loading="isSubscribing">
                             Subscribe to Newsletter
                         </LazyVButton>
                     </form>
@@ -183,9 +183,14 @@ const footerLinks: FooterColumn[] = [
 ]
 
 const toast = useToast()
+const isSubscribing = ref(false)
 
-const handleSubscribe = (): void => {
-    if (!email.value) return
+const handleSubscribe = async (): Promise<void> => {
+    if (!email.value || isSubscribing.value) return
+    isSubscribing.value = true
+    await new Promise((resolve) => setTimeout(resolve, 600))
+    isSubscribing.value = false
+
     toast.success(`Thank you for subscribing with: ${email.value}`, {
         title: 'Subscribed to Newsletter',
     })

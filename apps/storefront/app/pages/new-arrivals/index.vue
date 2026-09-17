@@ -296,8 +296,8 @@ const resetFilters = () => {
   maxPrice.value = 300
 }
 
-useHead({
-  title: 'New Arrivals — SHOP.CO',
-  meta: [{ name: 'description', content: 'Explore latest trendy releases and seasonal collections at SHOP.CO.' }],
+useSeoPage({
+  title: 'New Arrivals',
+  description: 'Explore latest trendy releases and seasonal collections at SHOP.CO.',
 })
 </script>

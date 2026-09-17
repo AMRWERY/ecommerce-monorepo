@@ -74,7 +74,7 @@
 
       <!-- Add to Cart Button -->
       <LazyVButton size="lg" shape="pill" class="flex-1 font-medium text-sm sm:text-base py-3.5"
-        @click="handleAddToCart">
+        :loading="isAddingToCart" @click="handleAddToCart">
         Add to Cart
       </LazyVButton>
 
@@ -82,15 +82,22 @@
       <button
         type="button"
         @click="toggleWishlist"
+        :disabled="isTogglingWishlist"
         :aria-label="isSaved ? 'Remove from wishlist' : 'Add to wishlist'"
         :class="[
-          'w-12 h-12 sm:w-13 sm:h-13 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 border cursor-pointer hover:scale-105 active:scale-95',
+          'w-12 h-12 sm:w-13 sm:h-13 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 border cursor-pointer hover:scale-105 active:scale-95 disabled:pointer-events-none',
           isSaved
             ? 'bg-rose-50 border-rose-200 text-rose-500 dark:bg-rose-950/40 dark:border-rose-800/60 shadow-xs'
             : 'bg-[#F0F0F0] dark:bg-neutral-800 border-transparent text-gray-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400 hover:bg-rose-50/60 dark:hover:bg-rose-950/30'
         ]"
       >
         <Icon
+          v-if="isTogglingWishlist"
+          name="svg-spinners:180-ring"
+          class="w-5 h-5 animate-spin"
+        />
+        <Icon
+          v-else
           :name="isSaved ? 'material-symbols:favorite' : 'material-symbols:favorite-outline'"
           :class="[
             'w-6 h-6 transition-all duration-200',
@@ -126,8 +133,14 @@ const currentId = computed(() => props.productId || (props.product as any).id ||
 const isSaved = computed(() => wishlistStore.hasItem(currentId.value))
 
 const toast = useToast()
+const isTogglingWishlist = ref(false)
 
-const toggleWishlist = (): void => {
+const toggleWishlist = async (): Promise<void> => {
+  if (isTogglingWishlist.value) return
+  isTogglingWishlist.value = true
+  await new Promise((resolve) => setTimeout(resolve, 400))
+  isTogglingWishlist.value = false
+
   const added = wishlistStore.toggleItem({
     id: currentId.value,
     title: props.product.title,
@@ -164,7 +177,14 @@ const decreaseQty = (): void => {
   if (quantity.value > 1) quantity.value--
 }
 
-const handleAddToCart = (): void => {
+const isAddingToCart = ref(false)
+
+const handleAddToCart = async (): Promise<void> => {
+  if (isAddingToCart.value) return
+  isAddingToCart.value = true
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  isAddingToCart.value = false
+
   emit('addToCart', {
     product: props.product,
     size: selectedSize.value,

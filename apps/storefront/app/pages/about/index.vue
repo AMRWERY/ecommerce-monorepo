@@ -92,9 +92,9 @@
 <script lang="ts" setup>
 import type { BreadcrumbItem } from '@/types/shared/VBreadcrumb'
 
-useHead({
-  title: 'About Us — SHOP.CO',
-  meta: [{ name: 'description', content: 'Discover the story, mission, and craftsmanship behind SHOP.CO fashion.' }],
+useSeoPage({
+  title: 'About Us',
+  description: 'Discover the story, mission, and craftsmanship behind SHOP.CO fashion.',
 })
 
 const breadcrumbs = computed<BreadcrumbItem[]>(() => [

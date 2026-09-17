@@ -100,8 +100,8 @@ const platformFeatures = [
   },
 ]
 
-useHead({
-  title: 'Platform Features — SHOP.CO',
-  meta: [{ name: 'description', content: 'Explore the modern e-commerce features powering the SHOP.CO fashion experience.' }],
+useSeoPage({
+  title: 'Platform Features',
+  description: 'Explore the modern e-commerce features powering the SHOP.CO fashion experience.',
 })
 </script>

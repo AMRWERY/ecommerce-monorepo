@@ -296,13 +296,8 @@ definePageMeta({
   alias: ['/privacy'],
 })
 
-useHead({
-  title: 'Privacy Policy — SHOP.CO',
-  meta: [
-    {
-      name: 'description',
-      content: 'Learn how SHOP.CO protects, uses, and secures your personal data and your privacy rights.',
-    },
-  ],
+useSeoPage({
+  title: 'Privacy Policy',
+  description: 'Learn how SHOP.CO protects, uses, and secures your personal data and your privacy rights.',
 })
 </script>

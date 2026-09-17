@@ -314,8 +314,8 @@ const resetFilters = () => {
   maxPrice.value = 300
 }
 
-useHead({
-  title: 'On Sale — SHOP.CO',
-  meta: [{ name: 'description', content: 'Browse exclusive discounts and deals on fashion at SHOP.CO.' }],
-  })
+useSeoPage({
+  title: 'On Sale',
+  description: 'Browse exclusive discounts and deals on fashion at SHOP.CO.',
+})
 </script>

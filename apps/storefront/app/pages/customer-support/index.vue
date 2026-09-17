@@ -164,8 +164,8 @@ definePageMeta({
   alias: ['/support'],
 })
 
-useHead({
-  title: 'Customer Support — SHOP.CO',
-  meta: [{ name: 'description', content: 'Get 24/7 assistance from SHOP.CO customer care for orders, tracking, and returns.' }],
+useSeoPage({
+  title: 'Customer Support',
+  description: 'Get 24/7 assistance from SHOP.CO customer care for orders, tracking, and returns.',
 })
 </script>

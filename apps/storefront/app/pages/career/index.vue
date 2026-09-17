@@ -117,8 +117,8 @@ const handleApply = (role: string) => {
   })
 }
 
-useHead({
-  title: 'Careers — SHOP.CO',
-  meta: [{ name: 'description', content: 'Explore open positions and join the passionate team at SHOP.CO.' }],
+useSeoPage({
+  title: 'Careers',
+  description: 'Explore open positions and join the passionate team at SHOP.CO.',
 })
 </script>

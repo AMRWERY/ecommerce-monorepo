@@ -151,8 +151,8 @@ definePageMeta({
   alias: ['/delivery'],
 })
 
-useHead({
-  title: 'Delivery Details — SHOP.CO',
-  meta: [{ name: 'description', content: 'Explore shipping methods, rates, and track your SHOP.CO packages in real time.' }],
+useSeoPage({
+  title: 'Delivery Details',
+  description: 'Explore shipping methods, rates, and track your SHOP.CO packages in real time.',
 })
 </script>

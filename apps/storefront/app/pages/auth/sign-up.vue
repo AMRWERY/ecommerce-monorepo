@@ -230,10 +230,9 @@ definePageMeta({
   alias: ['/signup', '/auth/sign-up'],
 })
 
-useHead({
-  title: 'Sign Up — SHOP.CO',
-  meta: [
-    { name: 'description', content: 'Create an account on SHOP.CO.' }
-  ],
+useSeoPage({
+  title: 'Sign Up',
+  description: 'Create an account on SHOP.CO.',
+  noindex: true,
 })
 </script>

@@ -246,9 +246,10 @@ definePageMeta({
   alias: ['/reset-password', '/auth/reset-password'],
 })
 
-useHead({
-  title: 'Reset Password — SHOP.CO',
-  meta: [{ name: 'description', content: 'Reset your SHOP.CO account password securely.' }],
+useSeoPage({
+  title: 'Reset Password',
+  description: 'Reset your SHOP.CO account password securely.',
+  noindex: true,
 })
 </script>
 

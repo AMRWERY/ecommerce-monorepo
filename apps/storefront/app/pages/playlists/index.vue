@@ -100,8 +100,8 @@ const handleWatch = (title: string) => {
   })
 }
 
-useHead({
-  title: 'Video Playlists & Lookbooks — SHOP.CO',
-  meta: [{ name: 'description', content: 'Watch styling video series, outfit breakdowns, and lookbooks from SHOP.CO.' }],
+useSeoPage({
+  title: 'Video Playlists & Lookbooks',
+  description: 'Watch styling video series, outfit breakdowns, and lookbooks from SHOP.CO.',
 })
 </script>

@@ -164,7 +164,8 @@
               </div>
 
               <div class="pt-3 flex justify-end">
-                <LazyVButton type="submit" variant="solid" color="dark" shape="pill" size="md" class="px-8">
+                <LazyVButton type="submit" variant="solid" color="dark" shape="pill" size="md" class="px-8"
+                  :loading="isSavingPersonalInfo">
                   Save Changes
                 </LazyVButton>
               </div>
@@ -347,7 +348,8 @@
                   <LazyVButton @click="showAddressForm = false" type="button" size="sm" variant="ghost">
                     Cancel
                   </LazyVButton>
-                  <LazyVButton type="submit" size="sm" variant="solid" color="dark" shape="pill">
+                  <LazyVButton type="submit" size="sm" variant="solid" color="dark" shape="pill"
+                    :loading="isSavingAddress">
                     Save Address
                   </LazyVButton>
                 </div>
@@ -450,7 +452,8 @@
                   <LazyVButton @click="showCardForm = false" type="button" size="sm" variant="ghost">
                     Cancel
                   </LazyVButton>
-                  <LazyVButton type="submit" size="sm" variant="solid" color="dark" shape="pill">
+                  <LazyVButton type="submit" size="sm" variant="solid" color="dark" shape="pill"
+                    :loading="isSavingCard">
                     Save Card
                   </LazyVButton>
                 </div>
@@ -579,7 +582,8 @@
                   <Icon name="lucide:check-circle" class="w-4 h-4" />
                   <span>Password updated successfully!</span>
                 </div>
-                <LazyVButton type="submit" size="sm" variant="solid" color="dark" shape="pill">
+                <LazyVButton type="submit" size="sm" variant="solid" color="dark" shape="pill"
+                  :loading="isUpdatingPassword">
                   Update Password
                 </LazyVButton>
               </form>
@@ -692,8 +696,13 @@ const user = ref<UserProfile>({
 
 const userForm = reactive({ ...user.value })
 const saveSuccess = ref(false)
+const isSavingPersonalInfo = ref(false)
 
-const savePersonalInfo = () => {
+const savePersonalInfo = async () => {
+  isSavingPersonalInfo.value = true
+  await new Promise((resolve) => setTimeout(resolve, 600))
+  isSavingPersonalInfo.value = false
+
   Object.assign(user.value, userForm)
   saveSuccess.value = true
   setTimeout(() => {
@@ -806,7 +815,13 @@ const newAddress = reactive({
   isDefault: false,
 })
 
-const addAddress = () => {
+const isSavingAddress = ref(false)
+
+const addAddress = async () => {
+  isSavingAddress.value = true
+  await new Promise((resolve) => setTimeout(resolve, 600))
+  isSavingAddress.value = false
+
   const id = `addr-${Date.now()}`
   if (newAddress.isDefault) {
     addresses.value.forEach(a => { a.isDefault = false })
@@ -865,7 +880,13 @@ const newCard = reactive({
   cvv: '',
 })
 
-const addPaymentMethod = () => {
+const isSavingCard = ref(false)
+
+const addPaymentMethod = async () => {
+  isSavingCard.value = true
+  await new Promise((resolve) => setTimeout(resolve, 600))
+  isSavingCard.value = false
+
   const last4 = newCard.cardNumber.replace(/\s+/g, '').slice(-4) || '1234'
   paymentMethods.value.push({
     id: `pm-${Date.now()}`,
@@ -908,8 +929,13 @@ const securityForm = reactive({
   confirmPassword: '',
 })
 const passwordSuccess = ref(false)
+const isUpdatingPassword = ref(false)
 
-const updatePassword = () => {
+const updatePassword = async () => {
+  isUpdatingPassword.value = true
+  await new Promise((resolve) => setTimeout(resolve, 600))
+  isUpdatingPassword.value = false
+
   passwordSuccess.value = true
   securityForm.currentPassword = ''
   securityForm.newPassword = ''
@@ -926,8 +952,9 @@ const notifications = reactive({
   newArrivals: false,
 })
 
-useHead({
-  title: 'My Account — SHOP.CO',
-  meta: [{ name: 'description', content: 'Profile for your purchases at SHOP.CO.' }],
+useSeoPage({
+  title: 'My Account',
+  description: 'Profile for your purchases at SHOP.CO.',
+  noindex: true,
 })
 </script>

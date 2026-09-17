@@ -22,7 +22,7 @@
 
                     <!-- Shop Now CTA Button -->
                     <div>
-                        <LazyVButton to="#" size="lg" shape="pill" class="w-full sm:w-auto px-14 py-4 text-base">
+                        <LazyVButton to="/products" size="lg" shape="pill" class="w-full sm:w-auto px-14 py-4 text-base">
                             Shop Now
                         </LazyVButton>
                     </div>

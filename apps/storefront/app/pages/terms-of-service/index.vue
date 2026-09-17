@@ -268,13 +268,8 @@ definePageMeta({
   alias: ['/terms-of-service'],
 })
 
-useHead({
-  title: 'Terms & Conditions — SHOP.CO',
-  meta: [
-    {
-      name: 'description',
-      content: 'Review the official terms and conditions for using SHOP.CO and ordering fashion items.',
-    },
-  ],
+useSeoPage({
+  title: 'Terms & Conditions',
+  description: 'Review the official terms and conditions for using SHOP.CO and ordering fashion items.',
 })
 </script>

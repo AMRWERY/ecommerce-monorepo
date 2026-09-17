@@ -168,8 +168,9 @@ definePageMeta({
   alias: ['/login', '/auth/login'],
 })
 
-useHead({
-  title: 'Sign In — SHOP.CO',
-  meta: [{ name: 'description', content: 'Sign in to your SHOP.CO account.' }],
+useSeoPage({
+  title: 'Sign In',
+  description: 'Sign in to your SHOP.CO account.',
+  noindex: true,
 })
 </script>

@@ -44,7 +44,7 @@
             class="w-full bg-[#F0F0F0] dark:bg-neutral-800 text-black dark:text-white text-xs sm:text-sm rounded-full ps-11 pe-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 dark:focus:ring-white/20 placeholder:text-gray-400 dark:placeholder-neutral-500 transition-all" />
         </div>
         <LazyVButton type="submit" variant="solid" color="dark" shape="pill" size="md"
-          class="shrink-0 px-6 sm:px-8 py-3">
+          class="shrink-0 px-6 sm:px-8 py-3" :loading="isApplyingPromo">
           Apply
         </LazyVButton>
       </div>
@@ -88,6 +88,7 @@ const emit = defineEmits<{
 const inputPromo = ref(props.currentPromo)
 const promoFeedback = ref('')
 const isPromoSuccess = ref(true)
+const isApplyingPromo = ref(false)
 
 watch(
   () => props.currentPromo,
@@ -96,12 +97,17 @@ watch(
   }
 )
 
-const handleApplyPromo = () => {
+const handleApplyPromo = async () => {
   if (!inputPromo.value.trim()) {
     promoFeedback.value = 'Please enter a promo code'
     isPromoSuccess.value = false
     return
   }
+
+  isApplyingPromo.value = true
+  await new Promise((resolve) => setTimeout(resolve, 600))
+  isApplyingPromo.value = false
+
   emit('applyPromo', inputPromo.value.trim())
   promoFeedback.value = `Promo code "${inputPromo.value.trim().toUpperCase()}" applied!`
   isPromoSuccess.value = true

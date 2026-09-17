@@ -180,15 +180,10 @@ const handleAddToCart = (payload: { product: ProductDetail; size: string; color:
   })
 }
 
-useHead({
-  title: `${product.value.title} — SHOP.CO`,
-  meta: [
-    { name: 'description', content: product.value.description },
-    // Add Open Graph tags for social media sharing
-    { property: 'og:title', content: product.value.title },
-    { property: 'og:description', content: product.value.description },
-    { property: 'og:image', content: product.value.images?.[0] || '' },
-    { property: 'og:type', content: 'website' },
-  ],
+useSeoPage({
+  title: product.value.title,
+  description: product.value.description,
+  image: product.value.images?.[0],
+  type: 'product',
 })
 </script>

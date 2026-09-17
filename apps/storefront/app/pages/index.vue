@@ -13,13 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-useHead({
-  title: 'SHOP.CO',
-  meta: [
-    {
-      name: 'description',
-      content: 'SHOP.CO - Discover the latest trends in fashion, including new arrivals, best sellers, and exclusive collections.',
-    },
-  ],
+useSeoPage({
+  description: 'SHOP.CO - Discover the latest trends in fashion, including new arrivals, best sellers, and exclusive collections.',
 })
 </script>

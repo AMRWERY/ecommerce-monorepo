@@ -94,9 +94,9 @@ const handleDownload = (title: string) => {
   })
 }
 
-useHead({
-  title: 'Free eBooks & Guides — SHOP.CO',
-  meta: [{ name: 'description', content: 'Download free streetwear style guides, capsule wardrobe lookbooks, and seasonal trends.' }],
+useSeoPage({
+  title: 'Free eBooks & Guides',
+  description: 'Download free streetwear style guides, capsule wardrobe lookbooks, and seasonal trends.',
 })
 
 </script>

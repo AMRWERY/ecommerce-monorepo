@@ -91,8 +91,8 @@ const steps = [
   },
 ]
 
-useHead({
-  title: 'How It Works — SHOP.CO',
-  meta: [{ name: 'description', content: 'Learn about the craftsmanship, production, and delivery process behind SHOP.CO fashion.' }],
+useSeoPage({
+  title: 'How It Works',
+  description: 'Learn about the craftsmanship, production, and delivery process behind SHOP.CO fashion.',
 })
 </script>

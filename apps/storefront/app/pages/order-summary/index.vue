@@ -315,9 +315,10 @@ definePageMeta({
   alias: ['/auth/auth'],
 })
 
-useHead({
-  title: 'Order Summary — SHOP.CO',
-  meta: [{ name: 'description', content: 'Order Summary for your purchases at SHOP.CO.' }],
+useSeoPage({
+  title: 'Order Summary',
+  description: 'Order Summary for your purchases at SHOP.CO.',
+  noindex: true,
 })
 </script>
 

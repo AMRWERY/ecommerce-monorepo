@@ -110,8 +110,8 @@ const handleReadPost = (title: string) => {
   toast.info(`Opening "${title}" article.`, { title: 'Style Article' })
 }
 
-useHead({
-  title: 'Style Blog & How-To Guides — SHOP.CO',
-  meta: [{ name: 'description', content: 'Explore how-to fashion guides, streetwear layering tips, and trend forecasts at SHOP.CO.' }],
+useSeoPage({
+  title: 'Style Blog & How-To Guides',
+  description: 'Explore how-to fashion guides, streetwear layering tips, and trend forecasts at SHOP.CO.',
 })
 </script>

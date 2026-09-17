@@ -97,8 +97,8 @@ const handleReadTutorial = (title: string) => {
   })
 }
 
-useHead({
-  title: 'Development Tutorials — SHOP.CO',
-  meta: [{ name: 'description', content: 'Explore developer tutorials, Nuxt layer architecture, and e-commerce APIs for SHOP.CO.' }],
+useSeoPage({
+  title: 'Development Tutorials',
+  description: 'Explore developer tutorials, Nuxt layer architecture, and e-commerce APIs for SHOP.CO.',
 })
 </script>
