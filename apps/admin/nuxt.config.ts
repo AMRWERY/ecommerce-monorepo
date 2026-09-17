@@ -9,5 +9,5 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  devServer: { port: 3000 },
+  devServer: { port: 3002 },
 })

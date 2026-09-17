@@ -24,7 +24,10 @@
 
 <script lang="ts" setup>
 const { t } = useI18n();
-const isDark = useDark();
+const isDark = useDark({
+  storageKey: "shop-co-theme",
+  initialValue: "light",
+});
 
 const toggleTheme = () => {
   isDark.value = !isDark.value;
