@@ -1,5 +1,5 @@
 <template>
-    <div
+    <nuxt-link-locale :to="product.route"
         class="group flex flex-col justify-between h-full bg-white dark:bg-[#1A1D25] border border-gray-200 dark:border-neutral-800 rounded-[20px] sm:rounded-[24px] hover:border-gray-300 dark:hover:border-neutral-700 hover:shadow-sm transition-all duration-200 cursor-pointer">
         <!-- Image Box -->
         <div
@@ -65,7 +65,7 @@
                 </span>
             </div>
         </div>
-    </div>
+    </nuxt-link-locale>
 </template>
 
 <script lang="ts" setup>

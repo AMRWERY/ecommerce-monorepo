@@ -26,6 +26,11 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/ic": "^1.2.4",
+    "@iconify-json/logos": "^1.2.14",
+    "@iconify-json/lucide": "^1.2.132",
+    "@iconify-json/material-symbols": "^1.2.92",
+    "@iconify-json/selfhst": "^1.2.18",
     "@iconify-json/svg-spinners": "^1.2.4"
   }
 }

@@ -89,6 +89,7 @@
                 </button>
                 <div v-if="isShopOpen" class="ps-4 space-y-2 mt-1">
                     <nuxt-link-locale v-for="item in shopCategories" :key="item.name" :to="item.route"
+                        @click="isMobileMenuOpen = false"
                         class="block py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
                         {{ item.name }}
                     </nuxt-link-locale>
@@ -119,12 +120,12 @@ const cartCount = ref<number>(2)
 
 // Categories List for Dropdown
 const shopCategories: ShopCategory[] = [
-    { name: "Men's Clothes", route: '#' },
-    { name: "Women's Clothes", route: '#' },
-    { name: 'Casual Wear', route: '#' },
-    { name: 'Formal Wear', route: '#' },
-    { name: 'Party Wear', route: '#' },
-    { name: 'Gym / Sportswear', route: '#' },
+    { name: "Men's Clothes", route: '/products?category=men' },
+    { name: "Women's Clothes", route: '/products?category=women' },
+    { name: 'Casual Wear', route: '/products?category=casual' },
+    { name: 'Formal Wear', route: '/products?category=formal' },
+    { name: 'Party Wear', route: '/products?category=party' },
+    { name: 'Gym / Sportswear', route: '/products?category=gym' },
 ]
 
 const toggleShopDropdown = (): void => {

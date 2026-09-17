@@ -6,4 +6,5 @@ export interface Product {
   price: number;
   originalPrice?: number;
   discountPercent?: number;
+  route: string;
 }

@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full bg-white dark:bg-[#0E1015] py-4 sm:py-7 border-b border-gray-100 dark:border-neutral-800 transition-colors">
+    <section class="w-full bg-white dark:bg-[#0E1015] py-4 sm:py-7">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Title -->
             <h2
@@ -14,7 +14,7 @@
 
             <!-- View All CTA Button -->
             <div class="mt-10 sm:mt-14 text-center">
-                <LazyVButton to="#" size="lg" shape="pill" variant="outline"
+                <LazyVButton to="/products" size="lg" shape="pill" variant="outline"
                     class="w-full sm:w-auto px-14 py-4 text-base">
                     View All
                 </LazyVButton>
@@ -34,6 +34,7 @@ const products = ref<Product[]>([
         image: '/img/prod-01.png',
         rating: 4.5,
         price: 120,
+        route: '/products/1',
     },
     {
         id: 2,
@@ -43,6 +44,7 @@ const products = ref<Product[]>([
         price: 240,
         originalPrice: 260,
         discountPercent: 20,
+        route: '/products/2',
     },
     {
         id: 3,
@@ -50,6 +52,7 @@ const products = ref<Product[]>([
         image: '/img/prod-03.png',
         rating: 4.5,
         price: 180,
+        route: '/products/3',
     },
     {
         id: 4,
@@ -59,6 +62,7 @@ const products = ref<Product[]>([
         price: 130,
         originalPrice: 160,
         discountPercent: 30,
+        route: '/products/4',
     },
 ])
 </script>
