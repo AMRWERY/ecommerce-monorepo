@@ -57,7 +57,10 @@
             @open-mobile-filter="isMobileFilterOpen = true" />
 
           <!-- Product Grid -->
-          <div v-if="filteredProducts.length > 0" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 items-stretch">
+          <div v-if="isLoading" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 items-stretch">
+            <LazyVProductCardSkeleton v-for="n in filteredProducts.length" :key="n" />
+          </div>
+          <div v-else-if="filteredProducts.length > 0" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 items-stretch">
             <LazyVProductCard v-for="item in filteredProducts" :key="item.id" :product="item" class="h-full" />
           </div>
 
@@ -67,7 +70,7 @@
             action-text="Reset Filters" action-variant="outline" action-color="dark" @action="resetFilters" />
 
           <!-- Pagination Bar -->
-          <div v-if="filteredProducts.length > 0" class="mt-8">
+          <div v-if="!isLoading && filteredProducts.length > 0" class="mt-8">
             <LazyVPagination v-model="currentPage" :total-pages="4" />
           </div>
         </div>
@@ -81,6 +84,7 @@ import type { BreadcrumbItem } from '@types/shared/VBreadcrumb'
 import type { CatalogProduct } from '@/types/products'
 
 const localePath = useLocalePath()
+const isLoading = useSimulatedLoading()
 
 // UI & Filter States
 const isMobileFilterOpen = ref(false)

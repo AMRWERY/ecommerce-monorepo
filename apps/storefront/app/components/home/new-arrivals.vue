@@ -9,7 +9,10 @@
 
             <!-- Dynamic Product Cards Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-stretch">
-                <LazyVProductCard v-for="product in products" :key="product.id" :product="product" class="h-full" />
+                <template v-if="isLoading">
+                    <LazyVProductCardSkeleton v-for="n in products.length" :key="n" />
+                </template>
+                <LazyVProductCard v-else v-for="product in products" :key="product.id" :product="product" class="h-full" />
             </div>
 
             <!-- View All CTA Button -->
@@ -25,6 +28,8 @@
 
 <script lang="ts" setup>
 import type { Product } from "@/types/shared/VProductCard"
+
+const isLoading = useSimulatedLoading()
 
 // Dynamic Products Data List matching your screenshot
 const products = ref<Product[]>([

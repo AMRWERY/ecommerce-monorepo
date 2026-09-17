@@ -6,7 +6,10 @@
     </h2>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-stretch">
-      <LazyVProductCard v-for="item in displayProducts" :key="item.id" :product="item" class="h-full" />
+      <template v-if="isLoading">
+        <LazyVProductCardSkeleton v-for="n in displayProducts.length" :key="n" />
+      </template>
+      <LazyVProductCard v-else v-for="item in displayProducts" :key="item.id" :product="item" class="h-full" />
     </div>
   </section>
 </template>
@@ -65,4 +68,5 @@ const defaultProducts: Product[] = [
 ]
 
 const displayProducts = computed(() => props.products ?? defaultProducts)
+const isLoading = useSimulatedLoading()
 </script>

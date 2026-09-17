@@ -1,5 +1,16 @@
 <template>
-  <div class="space-y-5">
+  <div v-if="isLoading" class="space-y-5 animate-pulse">
+    <div class="h-9 sm:h-11 bg-gray-200 dark:bg-neutral-800 rounded-full w-4/5" />
+    <div class="h-4 bg-gray-200 dark:bg-neutral-800 rounded-full w-24" />
+    <div class="h-8 bg-gray-200 dark:bg-neutral-800 rounded-full w-1/3" />
+    <div class="space-y-2 border-b border-gray-100 pb-5">
+      <div class="h-4 bg-gray-200 dark:bg-neutral-800 rounded-full w-full" />
+      <div class="h-4 bg-gray-200 dark:bg-neutral-800 rounded-full w-2/3" />
+    </div>
+    <div class="h-14 bg-gray-200 dark:bg-neutral-800 rounded-full w-full" />
+  </div>
+
+  <div v-else class="space-y-5">
     <!-- Title -->
     <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-black uppercase tracking-tight leading-tight">
       {{ product.title }}
@@ -126,6 +137,7 @@ const emit = defineEmits<{
   (e: 'addToCart', payload: { product: ProductDetail; size: string; color: string; quantity: number }): void
 }>()
 
+const isLoading = useSimulatedLoading()
 const route = useRoute()
 const wishlistStore = useWishlistStore()
 

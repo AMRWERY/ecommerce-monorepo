@@ -1,5 +1,19 @@
 <template>
-  <div class="flex flex-col-reverse sm:flex-row gap-3.5 sm:gap-4">
+  <div v-if="isLoading" class="flex flex-col-reverse sm:flex-row gap-3.5 sm:gap-4 animate-pulse">
+    <!-- Thumbnail Skeletons -->
+    <div class="flex sm:flex-col gap-3.5 shrink-0 justify-between sm:justify-start">
+      <div
+        v-for="n in Math.max(images.length, 1)"
+        :key="n"
+        class="w-24 h-24 sm:w-[130px] sm:h-[130px] bg-gray-200 dark:bg-neutral-800 rounded-[18px] sm:rounded-[20px] shrink-0"
+      />
+    </div>
+
+    <!-- Main Image Skeleton -->
+    <div class="flex-1 bg-gray-200 dark:bg-neutral-800 rounded-[20px] sm:rounded-[24px] aspect-square" />
+  </div>
+
+  <div v-else class="flex flex-col-reverse sm:flex-row gap-3.5 sm:gap-4">
     <!-- Thumbnails -->
     <div
       class="flex sm:flex-col gap-3.5 shrink-0 justify-between sm:justify-start"
@@ -51,6 +65,7 @@ const props = withDefaults(
 );
 
 const activeImageIndex = ref(0);
+const isLoading = useSimulatedLoading();
 const route = useRoute();
 const wishlistStore = useWishlistStore();
 
