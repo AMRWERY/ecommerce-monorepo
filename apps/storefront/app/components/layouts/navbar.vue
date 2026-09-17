@@ -27,11 +27,11 @@
                         <!-- Shop Dropdown -->
                         <LazyVDropdownMenu :label="t('navbar.shop') || 'Shop'" :items="shopCategories" />
 
-                        <nuxt-link-locale to="#" class="hover:text-black dark:hover:text-white transition-colors">On
+                        <nuxt-link-locale to="/on-sale" class="hover:text-black dark:hover:text-white transition-colors">On
                             Sale</nuxt-link-locale>
-                        <nuxt-link-locale to="#" class="hover:text-black dark:hover:text-white transition-colors">New
+                        <nuxt-link-locale to="/new-arrivals" class="hover:text-black dark:hover:text-white transition-colors">New
                             Arrivals</nuxt-link-locale>
-                        <nuxt-link-locale to="#"
+                        <nuxt-link-locale to="/products"
                             class="hover:text-black dark:hover:text-white transition-colors">Brands</nuxt-link-locale>
                     </nav>
                 </div>
@@ -69,7 +69,7 @@
 
                     <!-- User Profile Icon Button -->
                     <LazyVButton variant="ghost" color="dark" shape="icon" size="md"
-                        :aria-label="t('navbar.userAccount') || 'Account'">
+                        :aria-label="t('navbar.userAccount') || 'Account'" to="/profile">
                         <Icon name="material-symbols:account-circle-outline" class="w-6 h-6" />
                     </LazyVButton>
                 </div>
@@ -95,13 +95,13 @@
                     </nuxt-link-locale>
                 </div>
             </div>
-            <nuxt-link-locale to="#"
+            <nuxt-link-locale to="/on-sale" @click="isMobileMenuOpen = false"
                 class="block py-2 text-base font-medium text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white">On
                 Sale</nuxt-link-locale>
-            <nuxt-link-locale to="#"
+            <nuxt-link-locale to="/new-arrivals" @click="isMobileMenuOpen = false"
                 class="block py-2 text-base font-medium text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white">New
                 Arrivals</nuxt-link-locale>
-            <nuxt-link-locale to="#"
+            <nuxt-link-locale to="/products" @click="isMobileMenuOpen = false"
                 class="block py-2 text-base font-medium text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white">Brands</nuxt-link-locale>
         </div>
     </header>

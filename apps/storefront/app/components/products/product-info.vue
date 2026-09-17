@@ -77,6 +77,27 @@
         @click="handleAddToCart">
         Add to Cart
       </LazyVButton>
+
+      <!-- Wishlist Heart Button -->
+      <button
+        type="button"
+        @click="toggleWishlist"
+        :aria-label="isSaved ? 'Remove from wishlist' : 'Add to wishlist'"
+        :class="[
+          'w-12 h-12 sm:w-13 sm:h-13 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 border cursor-pointer hover:scale-105 active:scale-95',
+          isSaved
+            ? 'bg-rose-50 border-rose-200 text-rose-500 dark:bg-rose-950/40 dark:border-rose-800/60 shadow-xs'
+            : 'bg-[#F0F0F0] dark:bg-neutral-800 border-transparent text-gray-600 dark:text-neutral-400 hover:text-rose-500 dark:hover:text-rose-400 hover:bg-rose-50/60 dark:hover:bg-rose-950/30'
+        ]"
+      >
+        <Icon
+          :name="isSaved ? 'material-symbols:favorite' : 'material-symbols:favorite-outline'"
+          :class="[
+            'w-6 h-6 transition-all duration-200',
+            isSaved ? 'text-rose-500 scale-110' : ''
+          ]"
+        />
+      </button>
     </div>
   </div>
 </template>
@@ -84,13 +105,38 @@
 <script lang="ts" setup>
 import type { ProductDetail } from '@/types/products'
 
-const props = defineProps<{
-  product: ProductDetail
-}>()
+const props = withDefaults(
+  defineProps<{
+    product: ProductDetail
+    productId?: string | number
+  }>(),
+  {
+    productId: undefined,
+  }
+)
 
 const emit = defineEmits<{
   (e: 'addToCart', payload: { product: ProductDetail; size: string; color: string; quantity: number }): void
 }>()
+
+const route = useRoute()
+const wishlistStore = useWishlistStore()
+
+const currentId = computed(() => props.productId || (props.product as any).id || route.params.slug || 1)
+const isSaved = computed(() => wishlistStore.hasItem(currentId.value))
+
+const toggleWishlist = (): void => {
+  wishlistStore.toggleItem({
+    id: currentId.value,
+    title: props.product.title,
+    price: props.product.price,
+    originalPrice: props.product.originalPrice,
+    discountPercent: props.product.discountPercent,
+    rating: props.product.rating,
+    image: props.product.images?.[0] || '/img/prod-01.png',
+    route: `/products/${currentId.value}`,
+  })
+}
 
 const quantity = ref(1)
 const selectedSize = ref(props.product.sizes?.[2] ?? props.product.sizes?.[0] ?? 'Large')

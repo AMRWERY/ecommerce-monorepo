@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link-locale v-if="to !== undefined" :to="to" :class="classes">
+  <nuxt-link-locale v-if="to !== undefined" :to="normalizedTo" :class="classes">
     <Icon v-if="loading" name="svg-spinners:180-ring" class="h-4 w-4 shrink-0 animate-spin" />
     <slot />
   </nuxt-link-locale>
@@ -133,4 +133,10 @@ const classes = computed(() => [
   COLOR_CLASSES[props.variant][props.color],
   props.block ? "w-full" : "",
 ]);
+
+const normalizedTo = computed(() => {
+  if (typeof props.to !== "string") return props.to;
+  const cleaned = props.to.replace(/^\/(en|ar)(\/.*|$)/, "$2");
+  return cleaned || "/";
+});
 </script>

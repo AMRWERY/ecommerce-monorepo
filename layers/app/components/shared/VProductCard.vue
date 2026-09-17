@@ -10,6 +10,22 @@
                 -{{ discountBadge }}%
             </span>
 
+            <!-- Wishlist Heart Button (Top-Start on Image) -->
+            <button
+                type="button"
+                @click.prevent.stop="toggleWishlist"
+                :aria-label="isSaved ? 'Remove from wishlist' : 'Add to wishlist'"
+                class="absolute top-2.5 start-2.5 sm:top-3 sm:start-3 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 dark:bg-[#1A1D25]/90 backdrop-blur-md flex items-center justify-center shadow-sm hover:scale-110 active:scale-95 transition-all duration-200 group/heart border border-black/5 dark:border-white/10"
+            >
+                <Icon
+                    :name="isSaved ? 'material-symbols:favorite' : 'material-symbols:favorite-outline'"
+                    :class="[
+                        'w-4 h-4 sm:w-5 sm:h-5 transition-all duration-200',
+                        isSaved ? 'text-rose-500 scale-110' : 'text-gray-500 dark:text-neutral-400 group-hover/heart:text-rose-500'
+                    ]"
+                />
+            </button>
+
             <img :src="product.image" :alt="product.title"
                 class="w-full h-full object-cover mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-300 ease-out select-none"
                 loading="lazy" />
@@ -74,6 +90,13 @@ import type { Product } from '@/types/shared/VProductCard'
 const props = defineProps<{
     product: Product
 }>()
+
+const wishlistStore = useWishlistStore()
+const isSaved = computed(() => wishlistStore.hasItem(props.product.id))
+
+const toggleWishlist = () => {
+    wishlistStore.toggleItem(props.product)
+}
 
 // Calculate discount percentage if not provided directly
 const discountBadge = computed<number | null>(() => {

@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen bg-white dark:bg-[#12141A] text-black dark:text-white font-sans antialiased">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8">
             <!-- Breadcrumb Navigation using shared LazyVBreadcrumb -->
             <LazyVBreadcrumb :items="breadcrumbs" />
 
@@ -42,7 +42,7 @@
                     something you love.
                 </p>
                 <div class="pt-2">
-                    <LazyVButton :to="localePath('/products')" variant="solid" color="dark" shape="pill" size="md"
+                    <LazyVButton to="/products" variant="solid" color="dark" shape="pill" size="md"
                         class="px-8 py-3 font-medium">
                         Continue Shopping
                     </LazyVButton>
@@ -59,7 +59,7 @@ const localePath = useLocalePath()
 const cartStore = useCartStore()
 
 const breadcrumbs: BreadcrumbItem[] = [
-    { label: 'Home', to: localePath('/') },
+    { label: 'Home', to: '/' },
     { label: 'Cart' },
 ]
 

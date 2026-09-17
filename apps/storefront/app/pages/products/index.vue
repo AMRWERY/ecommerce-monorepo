@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen bg-white dark:bg-[#12141A] text-black dark:text-white font-sans antialiased">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8">
             <!-- Breadcrumb Navigation -->
             <LazyVBreadcrumb :items="breadcrumbs" />
 

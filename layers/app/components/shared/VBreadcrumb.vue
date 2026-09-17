@@ -10,7 +10,7 @@
             </span>
 
             <!-- Link item -->
-            <nuxt-link-locale v-else-if="item.to" :to="item.to"
+            <nuxt-link-locale v-else-if="item.to" :to="normalizePath(item.to)"
                 class="hover:text-black dark:hover:text-white transition-colors shrink-0">
                 {{ item.label }}
             </nuxt-link-locale>
@@ -29,4 +29,10 @@ import type { BreadcrumbItem } from '@/types/shared/VBreadcrumb'
 defineProps<{
     items: BreadcrumbItem[]
 }>()
+
+const normalizePath = (path: string | Record<string, unknown>) => {
+    if (typeof path !== 'string') return path
+    const cleaned = path.replace(/^\/(en|ar)(\/.*|$)/, '$2')
+    return cleaned || '/'
+}
 </script>

@@ -167,12 +167,18 @@ interface NormalizedDropdownItem extends DropdownMenuItem {
     key: string | number;
 }
 
+const normalizeTo = (to?: string | Record<string, unknown>) => {
+    if (typeof to !== 'string') return to;
+    const cleaned = to.replace(/^\/(en|ar)(\/.*|$)/, '$2');
+    return cleaned || '/';
+};
+
 const normalizedItems = computed<NormalizedDropdownItem[]>(() => {
     return props.items.map((item, idx) => ({
         ...item,
         key: item.name ?? item.label ?? idx,
         label: item.label ?? item.name ?? "",
-        to: item.to ?? item.route,
+        to: normalizeTo(item.to ?? item.route),
     }));
 });
 

@@ -10,12 +10,14 @@
         class="lg:col-span-6"
         :images="product.images"
         :title="product.title"
+        :product-id="productId"
       />
 
       <!-- Right: Product Info & Actions -->
       <lazy-product-info
         class="lg:col-span-6"
         :product="product"
+        :product-id="productId"
         @add-to-cart="handleAddToCart"
       />
     </section>
@@ -36,10 +38,14 @@ import type { ProductDetail, Review } from '@/types/products'
 // Breadcrumbs
 const breadcrumbs: BreadcrumbItem[] = [
   { label: 'Home', to: '/' },
-  { label: 'Shop', to: '' },
-  { label: 'Men', to: '' },
-  { label: 'T-shirts', to: '' },
+  { label: 'Shop', to: '/products' },
+  { label: 'Men', to: '/products?category=men' },
+  { label: 'T-shirts', to: '/products?category=t-shirts' },
 ]
+
+const route = useRoute()
+const cartStore = useCartStore()
+const productId = computed(() => (route.params.slug as string) || '1')
 
 // Product Data
 const product = ref<ProductDetail>({
@@ -156,6 +162,14 @@ const relatedProducts = ref<Product[]>([
 ])
 
 const handleAddToCart = (payload: { product: ProductDetail; size: string; color: string; quantity: number }): void => {
-  alert(`Added ${payload.quantity}x "${payload.product.title}" (${payload.size}, Color: ${payload.color}) to cart!`)
+  cartStore.addItem({
+    id: Number(productId.value) || 1,
+    title: payload.product.title,
+    price: payload.product.price,
+    image: payload.product.images?.[0] || '/img/prod-09.png',
+    size: payload.size,
+    color: payload.color,
+    quantity: payload.quantity,
+  })
 }
 </script>
