@@ -302,7 +302,7 @@ const resetFilters = () => {
 }
 
 useHead({
-  title: 'Products — SHOP.CO',
-  meta: [{ name: 'description', content: 'Browse all products at SHOP.CO.' }],
+    title: 'Products — SHOP.CO',
+    meta: [{ name: 'description', content: 'Browse all products at SHOP.CO.' }],
 })
 </script>

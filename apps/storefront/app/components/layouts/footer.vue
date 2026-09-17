@@ -147,17 +147,17 @@ const footerLinks: FooterColumn[] = [
     {
         title: 'Company',
         items: [
-            { label: 'About', route: '#' },
-            { label: 'Features', route: '#' },
-            { label: 'Works', route: '#' },
-            { label: 'Career', route: '#' },
+            { label: 'About', route: '/about' },
+            { label: 'Features', route: '/features' },
+            { label: 'Works', route: '/works' },
+            { label: 'Career', route: '/career' },
         ],
     },
     {
         title: 'Help',
         items: [
-            { label: 'Customer Support', route: '#' },
-            { label: 'Delivery Details', route: '#' },
+            { label: 'Customer Support', route: '/customer-support' },
+            { label: 'Delivery Details', route: '/delivery-details' },
             { label: 'Terms & Conditions', route: '/terms-of-service' },
             { label: 'Privacy Policy', route: '/privacy-policy' },
         ],
@@ -165,19 +165,19 @@ const footerLinks: FooterColumn[] = [
     {
         title: 'FAQ',
         items: [
-            { label: 'Account', route: '/profile' },
-            { label: 'Manage Deliveries', route: '/profile' },
-            { label: 'Orders', route: '/profile' },
-            { label: 'Payments', route: '/profile' },
+            { label: 'Account', route: '/profile?tab=personal' },
+            { label: 'Manage Deliveries', route: '/profile?tab=addresses' },
+            { label: 'Orders', route: '/profile?tab=orders' },
+            { label: 'Payments', route: '/profile?tab=payment' },
         ],
     },
     {
         title: 'Resources',
         items: [
-            { label: 'Free eBooks', route: '#' },
-            { label: 'Development Tutorial', route: '#' },
-            { label: 'How to - Blog', route: '#' },
-            { label: 'Youtube Playlist', route: '#' },
+            { label: 'Free eBooks', route: '/ebooks' },
+            { label: 'Development Tutorial', route: '/tutorials' },
+            { label: 'How to - Blog', route: '/blog' },
+            { label: 'Youtube Playlist', route: '/playlists' },
         ],
     },
 ]

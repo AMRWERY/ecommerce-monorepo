@@ -650,7 +650,25 @@ const breadcrumbs = computed<BreadcrumbItem[]>(() => [
 ])
 
 // Tabs
-const activeTab = ref('personal')
+const route = useRoute()
+const validTabs = ['personal', 'orders', 'addresses', 'payment', 'wishlist', 'security']
+
+const getInitialTab = () => {
+  const queryTab = route.query.tab as string
+  return queryTab && validTabs.includes(queryTab) ? queryTab : 'personal'
+}
+
+const activeTab = ref(getInitialTab())
+
+watch(
+  () => route.query.tab,
+  (newTab) => {
+    if (newTab && typeof newTab === 'string' && validTabs.includes(newTab)) {
+      activeTab.value = newTab
+    }
+  }
+)
+
 const tabs = computed(() => [
   { id: 'personal', label: 'Personal Details', icon: 'lucide:user' },
   { id: 'orders', label: 'My Orders', icon: 'lucide:package', badge: orders.value.length },
