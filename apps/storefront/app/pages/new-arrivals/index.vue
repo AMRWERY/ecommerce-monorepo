@@ -62,16 +62,9 @@
           </div>
 
           <!-- Empty State -->
-          <div v-else class="py-16 text-center space-y-3 bg-[#F0EEED]/30 dark:bg-neutral-800/30 rounded-2xl p-8">
-            <Icon name="lucide:sparkles" class="w-10 h-10 mx-auto text-gray-400" />
-            <h3 class="font-bold text-lg">No new arrival matches your filter</h3>
-            <p class="text-sm text-gray-500">
-              Try adjusting your category, price range, or clearing current selections.
-            </p>
-            <LazyVButton size="sm" shape="pill" variant="outline" @click="resetFilters">
-              Reset Filters
-            </LazyVButton>
-          </div>
+          <LazyVEmptyState v-else icon="lucide:sparkles" title="No new arrival matches your filter"
+            description="Try adjusting your category, price range, or clearing current selections."
+            action-text="Reset Filters" action-variant="outline" action-color="dark" @action="resetFilters" />
 
           <!-- Pagination Bar -->
           <div v-if="filteredProducts.length > 0" class="mt-8">
@@ -302,4 +295,9 @@ const resetFilters = () => {
   minPrice.value = 50
   maxPrice.value = 300
 }
+
+useHead({
+  title: 'New Arrivals — SHOP.CO',
+  meta: [{ name: 'description', content: 'Explore latest trendy releases and seasonal collections at SHOP.CO.' }],
+})
 </script>

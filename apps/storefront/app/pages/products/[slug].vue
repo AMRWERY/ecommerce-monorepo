@@ -172,4 +172,16 @@ const handleAddToCart = (payload: { product: ProductDetail; size: string; color:
     quantity: payload.quantity,
   })
 }
+
+useHead({
+  title: `${product.value.title} — SHOP.CO`,
+  meta: [
+    { name: 'description', content: product.value.description },
+    // Add Open Graph tags for social media sharing
+    { property: 'og:title', content: product.value.title },
+    { property: 'og:description', content: product.value.description },
+    { property: 'og:image', content: product.value.images?.[0] || '' },
+    { property: 'og:type', content: 'website' },
+  ],
+})
 </script>

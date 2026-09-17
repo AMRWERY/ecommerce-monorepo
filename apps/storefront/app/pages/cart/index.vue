@@ -30,24 +30,15 @@
             </div>
 
             <!-- Empty Cart State -->
-            <div v-else
-                class="text-center py-16 sm:py-20 border border-gray-200 dark:border-neutral-800 rounded-[20px] bg-white dark:bg-[#1A1D25] space-y-4 px-4">
-                <div
-                    class="w-20 h-20 mx-auto rounded-full bg-[#F0EEED] dark:bg-neutral-800 flex items-center justify-center text-gray-400 dark:text-neutral-500">
-                    <Icon name="lucide:shopping-bag" class="w-10 h-10" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-bold text-black dark:text-white">Your cart is empty</h3>
-                <p class="text-sm text-gray-500 dark:text-neutral-400 max-w-sm mx-auto">
-                    Looks like you haven't added anything to your cart yet. Explore our newest arrivals and find
-                    something you love.
-                </p>
-                <div class="pt-2">
-                    <LazyVButton to="/products" variant="solid" color="dark" shape="pill" size="md"
-                        class="px-8 py-3 font-medium">
-                        Continue Shopping
-                    </LazyVButton>
-                </div>
-            </div>
+            <LazyVEmptyState
+                v-else
+                bordered
+                icon="lucide:shopping-bag"
+                title="Your cart is empty"
+                description="Looks like you haven't added anything to your cart yet. Explore our newest arrivals and find something you love."
+                action-text="Continue Shopping"
+                action-to="/products"
+            />
         </div>
     </div>
 </template>

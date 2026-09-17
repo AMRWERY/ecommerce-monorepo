@@ -28,17 +28,10 @@
                     </div>
 
                     <!-- Empty State -->
-                    <div v-else
-                        class="py-16 text-center space-y-3 bg-[#F0EEED]/30 dark:bg-neutral-800/30 rounded-2xl p-8">
-                        <Icon name="lucide:search-x" class="w-10 h-10 mx-auto text-gray-400" />
-                        <h3 class="font-bold text-lg">No products found</h3>
-                        <p class="text-sm text-gray-500">
-                            Try adjusting your category, price range, or filter options.
-                        </p>
-                        <LazyVButton size="sm" shape="pill" variant="outline" @click="resetFilters">
-                            Reset Filters
-                        </LazyVButton>
-                    </div>
+                    <LazyVEmptyState v-else icon="lucide:search-x" title="No products found"
+                        description="Try adjusting your category, price range, or filter options."
+                        action-text="Reset Filters" action-variant="outline" action-color="dark"
+                        @action="resetFilters" />
 
                     <!-- Pagination Bar -->
                     <LazyVPagination v-model="currentPage" :total-pages="10" />
@@ -307,4 +300,9 @@ const resetFilters = () => {
     minPrice.value = 50
     maxPrice.value = 300
 }
+
+useHead({
+  title: 'Products — SHOP.CO',
+  meta: [{ name: 'description', content: 'Browse all products at SHOP.CO.' }],
+})
 </script>

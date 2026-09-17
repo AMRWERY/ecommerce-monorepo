@@ -5,16 +5,15 @@
       <LazyVBreadcrumb :items="breadcrumbs" />
 
       <!-- No order state: redirect hint -->
-      <div v-if="!order" class="text-center py-20 space-y-4">
-        <div class="w-20 h-20 mx-auto rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center">
-          <Icon name="lucide:package-search" class="w-10 h-10 text-gray-400" />
-        </div>
-        <h1 class="text-2xl font-bold text-black dark:text-white">No order found</h1>
-        <p class="text-sm text-gray-500 dark:text-neutral-400">Place an order first to view your order summary.</p>
-        <LazyVButton to="/products" variant="solid" color="dark" shape="pill" size="md" class="px-8 mt-2">
-          Start Shopping
-        </LazyVButton>
-      </div>
+      <LazyVEmptyState
+        v-if="!order"
+        icon="lucide:package-search"
+        title="No order found"
+        description="Place an order first to view your order summary."
+        action-text="Start Shopping"
+        action-to="/products"
+        class="my-8"
+      />
 
       <template v-else>
         <!-- ── Success Header ─────────────────────────────────────── -->
@@ -311,6 +310,15 @@ const printReceipt = () => {
     window.print()
   }
 }
+
+definePageMeta({
+  alias: ['/auth/auth'],
+})
+
+useHead({
+  title: 'Order Summary — SHOP.CO',
+  meta: [{ name: 'description', content: 'Order Summary for your purchases at SHOP.CO.' }],
+})
 </script>
 
 <style scoped>

@@ -85,6 +85,14 @@
               {{ tab.badge }}
             </span>
           </button>
+
+          <div class="pt-2 border-t border-gray-200 dark:border-neutral-800 mt-2">
+            <nuxt-link-locale to="/auth"
+              class="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 transition-all text-start">
+              <Icon name="lucide:log-out" class="w-4 h-4 shrink-0" />
+              <span>Sign Out</span>
+            </nuxt-link-locale>
+          </div>
         </div>
 
         <!-- Right Content Section -->
@@ -197,7 +205,7 @@
                   <div>
                     <div class="flex items-center gap-2">
                       <span class="font-bold text-sm text-black dark:text-white font-mono">{{ order.orderNumber
-                        }}</span>
+                      }}</span>
                       <span :class="[
                         'text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase',
                         getStatusBadgeClass(order.status)
@@ -252,14 +260,9 @@
             </div>
 
             <!-- Empty Orders State -->
-            <div v-else class="py-12 text-center space-y-3 bg-[#F9F9F9] dark:bg-neutral-800/40 rounded-2xl p-6">
-              <Icon name="lucide:package-open" class="w-10 h-10 mx-auto text-gray-400" />
-              <h3 class="font-bold text-base">No orders found</h3>
-              <p class="text-xs text-gray-500">You haven't placed any orders matching this filter.</p>
-              <LazyVButton :to="localePath('/products')" size="sm" shape="pill" variant="outline">
-                Explore Products
-              </LazyVButton>
-            </div>
+            <LazyVEmptyState v-else icon="lucide:package-open" title="No orders found"
+              description="You haven't placed any orders matching this filter." action-text="Explore Products"
+              action-to="/products" action-variant="outline" action-color="dark" />
           </div>
 
           <!-- ── TAB 3: SAVED ADDRESSES ──────────────────────────── -->
@@ -536,14 +539,9 @@
             </div>
 
             <!-- Empty Wishlist -->
-            <div v-else class="py-12 text-center space-y-3 bg-[#F9F9F9] dark:bg-neutral-800/40 rounded-2xl p-6">
-              <Icon name="material-symbols:favorite-outline" class="w-10 h-10 mx-auto text-gray-400" />
-              <h3 class="font-bold text-base">Your wishlist is empty</h3>
-              <p class="text-xs text-gray-500">Save items you love to keep an eye on them or buy later.</p>
-              <LazyVButton to="/products" size="sm" shape="pill" variant="outline">
-                Discover Styles
-              </LazyVButton>
-            </div>
+            <LazyVEmptyState v-else icon="material-symbols:favorite-outline" title="Your wishlist is empty"
+              description="Save items you love to keep an eye on them or buy later." action-text="Discover Styles"
+              action-to="/products" action-variant="outline" action-color="dark" />
           </div>
 
           <!-- ── TAB 6: SECURITY & NOTIFICATIONS ─────────────────── -->
@@ -908,5 +906,10 @@ const notifications = reactive({
   orderUpdates: true,
   promotions: true,
   newArrivals: false,
+})
+
+useHead({
+  title: 'My Account — SHOP.CO',
+  meta: [{ name: 'description', content: 'Profile for your purchases at SHOP.CO.' }],
 })
 </script>

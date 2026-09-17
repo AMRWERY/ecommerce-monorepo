@@ -8,7 +8,7 @@
             <!-- Centered Announcement Text -->
             <p class="text-center pe-6 sm:pe-0">
                 Sign up and get 20% off to your first order.&nbsp;
-                <nuxt-link-locale to="#"
+                <nuxt-link-locale to="/auth/sign-up"
                     class="font-semibold underline underline-offset-4 hover:text-gray-300 transition-colors">
                     Sign Up Now
                 </nuxt-link-locale>
