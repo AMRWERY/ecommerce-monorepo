@@ -156,7 +156,7 @@ const placementClass = computed(() => {
         case "end":
             return "end-0";
         case "center":
-            return "left-1/2 -translate-x-1/2";
+            return "start-1/2 -translate-x-1/2";
         case "start":
         default:
             return "start-0";

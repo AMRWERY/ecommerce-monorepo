@@ -58,7 +58,7 @@
 
                     <!-- Cart Icon Button -->
                     <LazyVButton variant="ghost" color="dark" shape="icon" size="md" class="relative"
-                        :aria-label="t('navbar.cartTitle') || 'Cart'">
+                        :aria-label="t('navbar.cartTitle') || 'Cart'" to="/cart">
                         <Icon name="material-symbols:add-shopping-cart-rounded" class="w-6 h-6" />
                         <!-- Badge (optional) -->
                         <span v-if="cartCount > 0"
@@ -116,7 +116,8 @@ const { t } = useI18n()
 const searchQuery = ref<string>('')
 const isShopOpen = ref<boolean>(false)
 const isMobileMenuOpen = ref<boolean>(false)
-const cartCount = ref<number>(2)
+const cartStore = useCartStore()
+const cartCount = computed(() => cartStore.count)
 
 // Categories List for Dropdown
 const shopCategories: ShopCategory[] = [

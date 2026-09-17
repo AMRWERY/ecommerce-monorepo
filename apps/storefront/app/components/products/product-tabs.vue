@@ -7,7 +7,7 @@
         activeTab === tab.id ? 'text-black font-semibold' : 'text-gray-400 hover:text-gray-700'
       ]">
         {{ tab.label }}
-        <span v-if="activeTab === tab.id" class="absolute bottom-0 left-0 w-full h-[2px] bg-black"></span>
+        <span v-if="activeTab === tab.id" class="absolute bottom-0 start-0 w-full h-[2px] bg-black"></span>
       </button>
     </div>
 

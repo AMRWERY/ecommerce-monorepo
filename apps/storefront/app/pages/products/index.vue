@@ -8,9 +8,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <!-- Sidebar & Mobile Filters -->
                 <lazy-product-filters v-model:is-mobile-open="isMobileFilterOpen"
-                    v-model:selected-category="selectedCategory" v-model:price-range="priceRange"
-                    v-model:selected-color="selectedColor" v-model:selected-size="selectedSize"
-                    v-model:dress-style="selectedDressStyle" class="lg:col-span-4 xl:col-span-3" />
+                    v-model:selected-category="selectedCategory" v-model:min-price="minPrice"
+                    v-model:max-price="maxPrice" v-model:selected-color="selectedColor"
+                    v-model:selected-size="selectedSize" v-model:dress-style="selectedDressStyle"
+                    :class="[!isMobileFilterOpen ? 'hidden lg:block' : 'block', 'lg:col-span-4 xl:col-span-3']" />
 
                 <!-- Catalog Products Section -->
                 <div class="lg:col-span-8 xl:col-span-9">
@@ -57,7 +58,8 @@ const route = useRoute()
 const isMobileFilterOpen = ref(false)
 const currentPage = ref(1)
 const sortBy = ref('Most Popular')
-const priceRange = ref(300)
+const minPrice = ref(50)
+const maxPrice = ref(250)
 const selectedCategory = ref('')
 const selectedSize = ref('')
 const selectedColor = ref('')
@@ -264,10 +266,8 @@ const filteredProducts = computed(() => {
         )
     }
 
-    // Filter by price
-    if (priceRange.value) {
-        list = list.filter((p) => p.price <= priceRange.value)
-    }
+    // Filter by price range (2-way)
+    list = list.filter((p) => p.price >= minPrice.value && p.price <= maxPrice.value)
 
     // Filter by color
     if (selectedColor.value) {
@@ -304,6 +304,7 @@ const resetFilters = () => {
     selectedDressStyle.value = ''
     selectedColor.value = ''
     selectedSize.value = ''
-    priceRange.value = 300
+    minPrice.value = 50
+    maxPrice.value = 300
 }
 </script>

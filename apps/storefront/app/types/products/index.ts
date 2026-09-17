@@ -50,7 +50,8 @@ export interface CatalogProduct {
 
 export interface ProductFilterState {
   category?: string;
-  priceRange: number;
+  minPrice: number;
+  maxPrice: number;
   selectedColor?: string;
   selectedSize?: string;
   dressStyle?: string;
