@@ -7,24 +7,24 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
       <!-- 1. Sales Target Card -->
       <div
-        class="lg:col-span-7 bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 shadow-sm space-y-4"
+        class="lg:col-span-7 bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 shadow-xs space-y-4"
       >
         <div class="flex items-center justify-between">
-          <h2 class="text-base font-bold text-neutral-900 dark:text-white">
+          <h2 class="text-base font-bold text-black dark:text-white">
             Sales Target
           </h2>
         </div>
 
         <div class="flex items-baseline justify-between pt-1">
           <div>
-            <span class="text-xs text-neutral-400 block mb-1">InProgress</span>
-            <span class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
+            <span class="text-xs text-gray-400 dark:text-neutral-500 block mb-1">InProgress</span>
+            <span class="text-xl sm:text-2xl font-black text-black dark:text-white">
               $231.032,444
             </span>
           </div>
           <div class="text-end">
-            <span class="text-xs text-neutral-400 block mb-1">Sales Target</span>
-            <span class="text-base sm:text-lg font-bold text-neutral-700 dark:text-neutral-300">
+            <span class="text-xs text-gray-400 dark:text-neutral-500 block mb-1">Sales Target</span>
+            <span class="text-base sm:text-lg font-bold text-gray-700 dark:text-neutral-300">
               $500,000,00
             </span>
           </div>
@@ -32,7 +32,7 @@
 
         <!-- Target Progress Bar with Thumb -->
         <div class="relative pt-2 pb-1">
-          <div class="w-full h-3.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden">
+          <div class="w-full h-3.5 bg-[#F0F0F0] dark:bg-neutral-800 rounded-full overflow-hidden">
             <div class="h-full bg-[#3373FF] rounded-full" style="width: 52%" />
           </div>
           <!-- Draggable/Indicator Thumb as in design -->
@@ -45,7 +45,7 @@
 
       <!-- 2. KPI: Total Revenue (Brand Solid Card) -->
       <div
-        class="lg:col-span-2 sm:col-span-6 bg-[#3373FF] rounded-2xl p-5 text-white flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow"
+        class="lg:col-span-2 sm:col-span-6 bg-[#3373FF] rounded-2xl p-5 text-white flex flex-col justify-between shadow-xs relative overflow-hidden group hover:shadow-md transition-shadow"
       >
         <div class="flex items-center justify-between">
           <span class="text-xs sm:text-sm font-medium text-white/90">Total Revenue</span>
@@ -64,34 +64,34 @@
 
       <!-- 3. KPI: Total Customer -->
       <div
-        class="lg:col-span-3 sm:col-span-6 bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 flex flex-col justify-between shadow-sm group hover:shadow-md transition-shadow"
+        class="lg:col-span-3 sm:col-span-6 bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 flex flex-col justify-between shadow-xs group hover:shadow-md transition-shadow"
       >
         <div class="flex items-center justify-between">
-          <span class="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">Total Customer</span>
-          <Icon name="lucide:arrow-up-right" class="w-4 h-4 text-neutral-400 group-hover:text-[#3373FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+          <span class="text-xs sm:text-sm font-medium text-gray-500 dark:text-neutral-400">Total Customer</span>
+          <Icon name="lucide:arrow-up-right" class="w-4 h-4 text-gray-400 dark:text-neutral-500 group-hover:text-[#3373FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
         </div>
         <div class="mt-4">
-          <div class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          <div class="text-2xl sm:text-3xl font-black text-black dark:text-white tracking-tight">
             5.000
           </div>
           <div class="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
             <Icon name="lucide:trending-up" class="w-3 h-3" />
-            + 1.5% <span class="text-neutral-400 font-normal">from last week</span>
+            + 1.5% <span class="text-gray-400 dark:text-neutral-500 font-normal">from last week</span>
           </div>
         </div>
       </div>
 
       <!-- 4. Sales Chart Area -->
       <div
-        class="lg:col-span-7 bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 shadow-sm space-y-4"
+        class="lg:col-span-7 bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 shadow-xs space-y-4"
       >
         <div class="flex items-center justify-between flex-wrap gap-2">
-          <h2 class="text-base font-bold text-neutral-900 dark:text-white">
+          <h2 class="text-base font-bold text-black dark:text-white">
             Your Sales this year
           </h2>
           <nuxt-link-locale
             to=""
-            class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-500 dark:text-neutral-400 hover:text-[#3373FF] transition-colors"
+            class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 dark:text-neutral-400 hover:text-[#3373FF] transition-colors"
           >
             Show All
             <Icon name="lucide:arrow-up-right" class="w-3.5 h-3.5" />
@@ -100,11 +100,11 @@
 
         <!-- Legend & Badges -->
         <div class="flex flex-wrap items-center gap-4 text-xs">
-          <div class="flex items-center gap-1.5 text-neutral-600 dark:text-neutral-300">
+          <div class="flex items-center gap-1.5 text-gray-700 dark:text-gray-300">
             <span class="w-2.5 h-2.5 rounded-sm bg-lime-500" />
             <span>Average Sale Value</span>
           </div>
-          <div class="flex items-center gap-1.5 text-neutral-600 dark:text-neutral-300">
+          <div class="flex items-center gap-1.5 text-gray-700 dark:text-gray-300">
             <span class="w-2.5 h-2.5 rounded-sm bg-[#3373FF]" />
             <span>Average item per sale</span>
           </div>
@@ -112,9 +112,9 @@
 
         <!-- Average Value Highlight Badges -->
         <div class="flex items-center justify-center gap-3 py-2">
-          <div class="px-3 py-1.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-center">
-            <div class="text-[10px] text-neutral-400">Average item per sale</div>
-            <div class="text-xs font-bold text-neutral-900 dark:text-white">$231.411,223</div>
+          <div class="px-3 py-1.5 rounded-xl border border-gray-200 dark:border-neutral-800 bg-[#F0F0F0] dark:bg-neutral-800 text-center">
+            <div class="text-[10px] text-gray-400 dark:text-neutral-500">Average item per sale</div>
+            <div class="text-xs font-bold text-black dark:text-white">$231.411,223</div>
           </div>
           <div class="px-3 py-1.5 rounded-xl bg-lime-400 text-neutral-900 text-center shadow-sm">
             <div class="text-[10px] font-medium opacity-80">Average sale value</div>
@@ -126,9 +126,9 @@
         <div class="relative h-44 w-full">
           <svg class="w-full h-full" viewBox="0 0 700 160" preserveAspectRatio="none">
             <!-- Grid Lines -->
-            <line x1="0" y1="40" x2="700" y2="40" stroke="currentColor" class="text-neutral-100 dark:text-neutral-800" stroke-dasharray="4 4" />
-            <line x1="0" y1="80" x2="700" y2="80" stroke="currentColor" class="text-neutral-100 dark:text-neutral-800" stroke-dasharray="4 4" />
-            <line x1="0" y1="120" x2="700" y2="120" stroke="currentColor" class="text-neutral-100 dark:text-neutral-800" stroke-dasharray="4 4" />
+            <line x1="0" y1="40" x2="700" y2="40" stroke="currentColor" class="text-gray-100 dark:text-neutral-800" stroke-dasharray="4 4" />
+            <line x1="0" y1="80" x2="700" y2="80" stroke="currentColor" class="text-gray-100 dark:text-neutral-800" stroke-dasharray="4 4" />
+            <line x1="0" y1="120" x2="700" y2="120" stroke="currentColor" class="text-gray-100 dark:text-neutral-800" stroke-dasharray="4 4" />
 
             <!-- Vertical indicator line at current month -->
             <line x1="300" y1="10" x2="300" y2="150" stroke="#3373FF" stroke-width="2" />
@@ -152,7 +152,7 @@
           </svg>
 
           <!-- Months Bar -->
-          <div class="flex justify-between text-[11px] text-neutral-400 mt-1 px-1">
+          <div class="flex justify-between text-[11px] text-gray-400 dark:text-neutral-500 mt-1 px-1">
             <span>Jan</span>
             <span>Feb</span>
             <span>Mar</span>
@@ -172,38 +172,38 @@
       <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
         <!-- Total Transactions -->
         <div
-          class="bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 flex flex-col justify-between shadow-sm group hover:shadow-md transition-shadow"
+          class="bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 flex flex-col justify-between shadow-xs group hover:shadow-md transition-shadow"
         >
           <div class="flex items-center justify-between">
-            <span class="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">Total Transactions</span>
-            <Icon name="lucide:arrow-up-right" class="w-4 h-4 text-neutral-400 group-hover:text-[#3373FF] transition-colors" />
+            <span class="text-xs sm:text-sm font-medium text-gray-500 dark:text-neutral-400">Total Transactions</span>
+            <Icon name="lucide:arrow-up-right" class="w-4 h-4 text-gray-400 dark:text-neutral-500 group-hover:text-[#3373FF] transition-colors" />
           </div>
           <div class="mt-4">
-            <div class="text-2xl sm:text-3xl font-extrabold text-[#3373FF] tracking-tight">
+            <div class="text-2xl sm:text-3xl font-black text-[#3373FF] tracking-tight">
               12.000
             </div>
             <div class="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
               <Icon name="lucide:trending-up" class="w-3 h-3" />
-              + 3.4% <span class="text-neutral-400 font-normal">from last week</span>
+              + 3.4% <span class="text-gray-400 dark:text-neutral-500 font-normal">from last week</span>
             </div>
           </div>
         </div>
 
         <!-- Total Product -->
         <div
-          class="bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 flex flex-col justify-between shadow-sm group hover:shadow-md transition-shadow"
+          class="bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 flex flex-col justify-between shadow-xs group hover:shadow-md transition-shadow"
         >
           <div class="flex items-center justify-between">
-            <span class="text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">Total Product</span>
-            <Icon name="lucide:arrow-up-right" class="w-4 h-4 text-neutral-400 group-hover:text-[#3373FF] transition-colors" />
+            <span class="text-xs sm:text-sm font-medium text-gray-500 dark:text-neutral-400">Total Product</span>
+            <Icon name="lucide:arrow-up-right" class="w-4 h-4 text-gray-400 dark:text-neutral-500 group-hover:text-[#3373FF] transition-colors" />
           </div>
           <div class="mt-4">
-            <div class="text-2xl sm:text-3xl font-extrabold text-[#3373FF] tracking-tight">
+            <div class="text-2xl sm:text-3xl font-black text-[#3373FF] tracking-tight">
               5.000
             </div>
             <div class="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-red-500">
               <Icon name="lucide:trending-down" class="w-3 h-3" />
-              - 1.5% <span class="text-neutral-400 font-normal">from last week</span>
+              - 1.5% <span class="text-gray-400 dark:text-neutral-500 font-normal">from last week</span>
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@
           <div class="absolute -end-10 -bottom-10 w-44 h-44 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
           <div class="relative z-10 space-y-2">
-            <h3 class="text-xl font-bold tracking-tight">Increase your sales</h3>
+            <h3 class="text-xl font-black tracking-tight">Increase your sales</h3>
             <p class="text-xs text-blue-100 leading-relaxed max-w-sm">
               Discover the Proven Methods to Skyrocket Your Sales! Unleash the Potential of Your Business and Achieve Remarkable Growth.
             </p>
@@ -225,7 +225,7 @@
           <div class="relative z-10 pt-4">
             <button
               type="button"
-              class="px-5 py-2 rounded-xl bg-white text-[#2563EB] font-bold text-xs hover:bg-blue-50 transition-colors shadow-sm"
+              class="px-5 py-2.5 rounded-full bg-white text-black hover:bg-neutral-100 font-bold text-xs transition-colors shadow-sm"
             >
               Learn More
             </button>
@@ -238,16 +238,16 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
       <!-- Customer Growth 3 Province -->
       <div
-        class="lg:col-span-5 bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 shadow-sm space-y-4"
+        class="lg:col-span-5 bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 shadow-xs space-y-4"
       >
         <div class="flex items-center justify-between">
           <div>
-            <h2 class="text-base font-bold text-neutral-900 dark:text-white">Customer Growth</h2>
-            <span class="text-xs text-neutral-400">3 Province</span>
+            <h2 class="text-base font-bold text-black dark:text-white">Customer Growth</h2>
+            <span class="text-xs text-gray-400 dark:text-neutral-500">3 Province</span>
           </div>
           <nuxt-link-locale
             to=""
-            class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-500 dark:text-neutral-400 hover:text-[#3373FF] transition-colors"
+            class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 dark:text-neutral-400 hover:text-[#3373FF] transition-colors"
           >
             Show All
             <Icon name="lucide:arrow-up-right" class="w-3.5 h-3.5" />
@@ -256,22 +256,22 @@
 
         <!-- Province Legend Dots -->
         <div class="flex flex-wrap items-center gap-3 text-xs">
-          <div class="flex items-center gap-1.5 text-neutral-600 dark:text-neutral-300">
+          <div class="flex items-center gap-1.5 text-gray-700 dark:text-gray-300">
             <span class="w-2 h-2 rounded-full bg-lime-500" />
             <span>East Java (50%)</span>
           </div>
-          <div class="flex items-center gap-1.5 text-neutral-600 dark:text-neutral-300">
+          <div class="flex items-center gap-1.5 text-gray-700 dark:text-gray-300">
             <span class="w-2 h-2 rounded-full bg-[#3373FF]" />
             <span>Kalimantan (30%)</span>
           </div>
-          <div class="flex items-center gap-1.5 text-neutral-600 dark:text-neutral-300">
-            <span class="w-2 h-2 rounded-full bg-neutral-900 dark:bg-white" />
+          <div class="flex items-center gap-1.5 text-gray-700 dark:text-gray-300">
+            <span class="w-2 h-2 rounded-full bg-black dark:bg-white" />
             <span>Riau (20%)</span>
           </div>
         </div>
 
         <!-- Stylized Map Mockup -->
-        <div class="relative h-56 bg-neutral-100 dark:bg-[#12141A] rounded-xl overflow-hidden flex items-center justify-center border border-neutral-200/60 dark:border-neutral-800">
+        <div class="relative h-56 bg-[#F0F0F0] dark:bg-[#12141A] rounded-xl overflow-hidden flex items-center justify-center border border-gray-200/60 dark:border-neutral-800">
           <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3373FF_1px,transparent_1px)] [background-size:16px_16px]" />
           <!-- Map pins -->
           <div class="absolute top-1/3 start-1/4 flex flex-col items-center">
@@ -283,19 +283,19 @@
           <div class="absolute bottom-1/3 end-1/3 flex flex-col items-center">
             <span class="w-3.5 h-3.5 rounded-full bg-[#3373FF] ring-4 ring-[#3373FF]/30" />
           </div>
-          <span class="text-xs text-neutral-400 font-medium z-10">Regional Performance Map</span>
+          <span class="text-xs text-gray-400 dark:text-neutral-500 font-medium z-10">Regional Performance Map</span>
         </div>
       </div>
 
       <!-- Product Popular Table -->
       <div
-        class="lg:col-span-7 bg-white dark:bg-[#1A1D25] border border-neutral-200/80 dark:border-[#2A2E38] rounded-2xl p-5 shadow-sm space-y-4"
+        class="lg:col-span-7 bg-white dark:bg-[#1A1D25] border border-gray-200/80 dark:border-neutral-800 rounded-2xl p-5 shadow-xs space-y-4"
       >
         <div class="flex items-center justify-between">
-          <h2 class="text-base font-bold text-neutral-900 dark:text-white">Product Popular</h2>
+          <h2 class="text-base font-bold text-black dark:text-white">Product Popular</h2>
           <nuxt-link-locale
             to=""
-            class="inline-flex items-center gap-1 text-xs font-semibold text-neutral-500 dark:text-neutral-400 hover:text-[#3373FF] transition-colors"
+            class="inline-flex items-center gap-1 text-xs font-semibold text-gray-500 dark:text-neutral-400 hover:text-[#3373FF] transition-colors"
           >
             Show All
             <Icon name="lucide:arrow-up-right" class="w-3.5 h-3.5" />
@@ -305,45 +305,45 @@
         <div class="overflow-x-auto">
           <table class="w-full text-start text-xs">
             <thead>
-              <tr class="text-neutral-400 border-b border-neutral-100 dark:border-[#2A2E38]">
+              <tr class="text-gray-400 dark:text-neutral-500 border-b border-gray-100 dark:border-neutral-800">
                 <th class="pb-3 font-semibold text-start">Product</th>
                 <th class="pb-3 font-semibold text-start">Price</th>
                 <th class="pb-3 font-semibold text-start">Sales</th>
                 <th class="pb-3 font-semibold text-start">Status</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-neutral-100 dark:divide-[#2A2E38]">
+            <tbody class="divide-y divide-gray-100 dark:divide-neutral-800">
               <tr
                 v-for="(product, idx) in popularProducts"
                 :key="idx"
-                class="hover:bg-neutral-50/80 dark:hover:bg-neutral-800/40 transition-colors"
+                class="hover:bg-[#F0F0F0]/60 dark:hover:bg-neutral-800/40 transition-colors"
               >
                 <!-- Product name & thumb -->
                 <td class="py-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center shrink-0 border border-neutral-200/60 dark:border-neutral-700">
-                      <Icon name="lucide:footprints" class="w-5 h-5 text-neutral-500" />
+                    <div class="w-10 h-10 rounded-xl bg-[#F0F0F0] dark:bg-neutral-800 flex items-center justify-center shrink-0 border border-gray-200/60 dark:border-neutral-700">
+                      <Icon name="lucide:footprints" class="w-5 h-5 text-gray-500 dark:text-neutral-400" />
                     </div>
                     <div>
-                      <div class="text-[10px] text-neutral-400">{{ product.code }}</div>
-                      <div class="font-semibold text-neutral-900 dark:text-white">{{ product.name }}</div>
+                      <div class="text-[10px] text-gray-400 dark:text-neutral-500">{{ product.code }}</div>
+                      <div class="font-semibold text-black dark:text-white">{{ product.name }}</div>
                     </div>
                   </div>
                 </td>
 
                 <!-- Price -->
-                <td class="py-3 font-medium text-neutral-700 dark:text-neutral-300">
+                <td class="py-3 font-medium text-gray-700 dark:text-gray-300">
                   {{ product.price }}
                 </td>
 
                 <!-- Sales -->
-                <td class="py-3 font-medium text-neutral-700 dark:text-neutral-300">
+                <td class="py-3 font-medium text-gray-700 dark:text-gray-300">
                   {{ product.sales }}
                 </td>
 
                 <!-- Status Pill -->
                 <td class="py-3">
-                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60">
                     {{ product.status }}
                   </span>
                 </td>

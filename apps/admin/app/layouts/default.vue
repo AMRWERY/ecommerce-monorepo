@@ -1,6 +1,6 @@
 <template>
   <div :dir="isRtl ? 'rtl' : 'ltr'" class="relative w-full">
-    <div class="min-h-screen bg-[#F8F9FB] dark:bg-[#0E1015] text-neutral-900 dark:text-neutral-100 transition-colors">
+    <div class="min-h-screen bg-[#FAFAFA] dark:bg-[#0E1015] text-neutral-900 dark:text-neutral-100 transition-colors">
       <!-- Admin Sidebar -->
       <sidebar />
 
